@@ -35,22 +35,11 @@
 
   security.pam.services.swaylock.text = "auth include login";
 
-  environment.systemPackages = with pkgs; [
-    btop
-    neovim
-    wget
-    xdg-desktop-portal-hyprland
-    xdg-user-dirs
-    zsh
-  ];
-
-  users.users.evilbunny = {
-    isNormalUser = true;
-    home = "/home/evilbunny";
-    extraGroups = [ "wheel" "networkmanager" "video" ];
-    packages = with pkgs; [
+  environment = { 
+    systemPackages = with pkgs; [
       alacritty
       bibata-cursors
+      btop
       exa
       firefox
       fuzzel
@@ -59,9 +48,9 @@
       kdiff3
       lxappearance
       mako
+      neovim
       pavucontrol
       polkit_gnome
-      papirus-icon-theme
       (python311.withPackages(ps: with ps; [ requests ]))
       ripgrep
       swaybg
@@ -69,12 +58,25 @@
       unrar
       unzrip
       waybar
+      webcord
+      wget
       wlogout
       wl-clipboard
+      xdg-desktop-portal-hyprland
+      xdg-user-dirs
       xfce.thunar
       xfce.thunar-archive-plugin
       xfce.tumbler
+      zsh
     ];
+    shells = [ pkgs.zsh ];
+    sessionVariables.NIXOS_OZONE_WL = "1";
+  };
+
+  users.users.evilbunny = {
+    isNormalUser = true;
+    home = "/home/evilbunny";
+    extraGroups = [ "wheel" "networkmanager" "video" ];
   };
 
   nixpkgs = {
@@ -116,7 +118,6 @@
   };
 
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = [ pkgs.zsh ];
 
   programs.zsh = {
     enable = true;
