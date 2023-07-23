@@ -7,12 +7,35 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.timeout = 1;
-  boot.loader.systemd-boot.configurationLimit = 10;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    timeout = 1;
+    systemd-boot.configurationLimit = 10;
+    efi.canTouchEfiVariables = true;
+  };
 
-  networking.hostName = "evillaptop";
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      nvidia-vaapi-driver
+    ];
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+  };
+
+  networking.hostName = "evilpc";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
@@ -41,38 +64,38 @@
       bibata-cursors
       btop
       exa
+      discord
       firefox
       fuzzel
-      git
       glxinfo
+      grim
+      jq
       kdiff3
       lxappearance
       mako
-      neovim
+      nvtop
       pavucontrol
       polkit_gnome
       (python311.withPackages(ps: with ps; [ requests ]))
       ripgrep
+      slurp
       swaybg
       swaylock-effects
       unrar
       unzrip
       waybar
-      webcord
       wget
       wlogout
       wl-clipboard
       xdg-desktop-portal-hyprland
       xdg-user-dirs
-      xfce.thunar
-      xfce.thunar-archive-plugin
-      xfce.tumbler
-      zsh
+      xdg-utils
     ];
     shells = [ pkgs.zsh ];
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
+  users.defaultUserShell = pkgs.zsh;
   users.users.evilbunny = {
     isNormalUser = true;
     home = "/home/evilbunny";
@@ -112,25 +135,38 @@
     ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  users.defaultUserShell = pkgs.zsh;
-
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    ohMyZsh = {
+  programs = { 
+    git.enable = true;
+    hyprland = {
       enable = true;
-      plugins = [ "git" "man" ];
+      nvidiaPatches = true;
+      xwayland.enable = true;
+    };
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+    
+    starship.enable = true;
+    steam.enable = true;
+
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [ thunar-archive-plugin tumbler ];
+    };
+
+    zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      ohMyZsh = {
+        enable = true;
+        plugins = [ "git" "man" ];
+      };
     };
   };
-
-  programs.starship.enable = true;
 
   nix.gc = {
     automatic = true;
