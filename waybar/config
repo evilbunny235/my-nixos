@@ -1,0 +1,125 @@
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["custom/weather", "wlr/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "pulseaudio", "cpu", "temperature", "custom/gpu", "network", "clock"],
+    // Modules configuration
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            //"3": "",
+            //"4": "",
+            //"5": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "wlr/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<span size='10pt' font='Fira Code'>{calendar}</span>",
+        "format": "{: %R   %d-%b}",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/thermal/thermal_zone3/temp",
+        "critical-threshold": 85,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} {ipaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/weather" : {
+        "tooltip" : true,
+        "format" : "{}C",
+        "interval" : 30,
+        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type" : "json"
+    },
+    "custom/gpu" :{
+        "exec": "nvidia-smi --query-gpu=utilization.gpu,utilization.memory --format=csv,noheader | sed -e 's/ //g' -e 's/,/  /'",
+        "tooltip": false,
+        "format": "{} ",
+        "interval": 5
+    },
+}
+
