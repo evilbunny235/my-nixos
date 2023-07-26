@@ -64,13 +64,14 @@
       bibata-cursors
       btop
       exa
-      discord
       firefox
       fuzzel
       glxinfo
       grim
+      helix
       jq
       kdiff3
+      kitty
       lxappearance
       mako
       nvtop
@@ -90,9 +91,20 @@
       xdg-desktop-portal-hyprland
       xdg-user-dirs
       xdg-utils
+
+      (pkgs.writeShellApplication {
+        name = "webcord";
+	text = "${pkgs.webcord}/bin/webcord --disable-gpu";
+      })
+      (pkgs.makeDesktopItem {
+        name = "webcord";
+	exec = "webcord";
+	desktopName = "WebCord";
+      })
     ];
     shells = [ pkgs.zsh ];
     sessionVariables.NIXOS_OZONE_WL = "1";
+    variables.EDITOR = "nvim";
   };
 
   users.defaultUserShell = pkgs.zsh;
