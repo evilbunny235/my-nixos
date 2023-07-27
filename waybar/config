@@ -14,7 +14,7 @@
         "on-click": "activate",
         "format": "{name}: {icon}",
         "format-icons": {
-            "1": "",
+            // "1": "",
             "2": "",
             //"3": "",
             //"4": "",
@@ -27,22 +27,6 @@
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": true
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "wlr/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
     },
     "tray": {
         "icon-size": 13,
@@ -81,7 +65,6 @@
         "format-icons": ["", "", ""]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} {ipaddr} ",
