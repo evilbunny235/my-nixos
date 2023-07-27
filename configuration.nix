@@ -94,17 +94,18 @@
 
       (pkgs.writeShellApplication {
         name = "webcord";
-	text = "${pkgs.webcord}/bin/webcord --disable-gpu";
+        text = "${pkgs.webcord}/bin/webcord --disable-gpu";
       })
       (pkgs.makeDesktopItem {
         name = "webcord";
-	exec = "webcord";
-	desktopName = "WebCord";
+        exec = "webcord";
+        desktopName = "WebCord";
       })
     ];
+
     shells = [ pkgs.zsh ];
     sessionVariables.NIXOS_OZONE_WL = "1";
-    variables.EDITOR = "nvim";
+    variables.EDITOR = "hx";
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -120,8 +121,8 @@
     overlays = [
       (self: super: {
         waybar = super.waybar.overrideAttrs (oldAttrs: {
-	  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-	});
+          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+        });
       })
     ];
   };

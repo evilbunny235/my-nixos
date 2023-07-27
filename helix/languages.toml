@@ -1,0 +1,5 @@
+[[language]]
+name = "nix"
+auto-format = true
+file-types = ["nix"]
+indent = { unit = " ", tab-width = 2 }
