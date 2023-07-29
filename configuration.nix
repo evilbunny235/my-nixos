@@ -8,9 +8,13 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
-    systemd-boot.enable = true;
+    systemd-boot = {
+      enable = true;
+      editor = false;
+      configurationLimit = 10;
+    };
+
     timeout = 1;
-    systemd-boot.configurationLimit = 10;
     efi.canTouchEfiVariables = true;
   };
 
@@ -77,7 +81,6 @@
       nvtop
       pavucontrol
       polkit_gnome
-      (python311.withPackages(ps: with ps; [ requests ]))
       ripgrep
       slurp
       swaybg
@@ -139,9 +142,9 @@
     };
 
     fonts = with pkgs; [
-      meslo-lgs-nf
-      fira-code
       dejavu_fonts
+      fira-code
+      meslo-lgs-nf
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -156,11 +159,6 @@
       xwayland.enable = true;
     };
 
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-    
     starship.enable = true;
     steam.enable = true;
 
@@ -205,11 +203,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

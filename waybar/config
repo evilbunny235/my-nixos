@@ -52,11 +52,11 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] kitty -e btop\""
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] kitty -e btop\""
     },
     "temperature": {
         "hwmon-path": "/sys/class/thermal/thermal_zone3/temp",
