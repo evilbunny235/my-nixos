@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -18,29 +15,35 @@
     efi.canTouchEfiVariables = true;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      nvidia-vaapi-driver
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      nvidia-vaapi-driver
-    ];
+  hardware = {
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        nvidia-vaapi-driver
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        nvidia-vaapi-driver
+      ];
+    };
+    
+    nvidia = {
+      modesetting.enable = true;
+      open = true;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
+    };
+
+    bluetooth.enable = true;
+    xone.enable = true;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+  networking = {
+    hostName = "evilpc";
+    networkmanager.enable = true;
   };
-
-  networking.hostName = "evilpc";
-  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
 
@@ -50,37 +53,37 @@
     keyMap = "dvorak";
   };
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services = {
+    xserver.videoDrivers = [ "nvidia" ];
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+    blueman.enable = true;
   };
 
   security.pam.services.swaylock.text = "auth include login";
 
   environment = { 
     systemPackages = with pkgs; [
-      alacritty
       bibata-cursors
       btop
       exa
       firefox
       fuzzel
-      glxinfo
       grim
       helix
       jq
       kdiff3
       kitty
-      lxappearance
       mako
       nvtop
       pavucontrol
       polkit_gnome
+      playerctl
       ripgrep
       slurp
       swaybg
@@ -111,11 +114,13 @@
     variables.EDITOR = "hx";
   };
 
-  users.defaultUserShell = pkgs.zsh;
-  users.users.evilbunny = {
-    isNormalUser = true;
-    home = "/home/evilbunny";
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.evilbunny = {
+      isNormalUser = true;
+      home = "/home/evilbunny";
+      extraGroups = [ "wheel" "networkmanager" "video" ];
+    };
   };
 
   nixpkgs = {
