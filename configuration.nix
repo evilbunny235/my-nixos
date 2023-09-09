@@ -71,16 +71,21 @@
     systemPackages = with pkgs; [
       bibata-cursors
       btop
-      exa
+      eza
+      discord
       firefox
       fuzzel
       grim
       helix
+      helvum
       jq
       kdiff3
       kitty
+      lazygit
       mako
       nvtop
+      obs-studio
+      path-of-building
       pavucontrol
       polkit_gnome
       playerctl
@@ -97,16 +102,6 @@
       xdg-desktop-portal-hyprland
       xdg-user-dirs
       xdg-utils
-
-      (pkgs.writeShellApplication {
-        name = "webcord";
-        text = "${pkgs.webcord}/bin/webcord --disable-gpu";
-      })
-      (pkgs.makeDesktopItem {
-        name = "webcord";
-        exec = "webcord";
-        desktopName = "WebCord";
-      })
     ];
 
     shells = [ pkgs.zsh ];
@@ -125,14 +120,6 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    
-    overlays = [
-      (self: super: {
-        waybar = super.waybar.overrideAttrs (oldAttrs: {
-          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-        });
-      })
-    ];
   };
 
   fonts = {
@@ -146,7 +133,7 @@
       };
     };
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       dejavu_fonts
       fira-code
       meslo-lgs-nf
@@ -160,7 +147,7 @@
     git.enable = true;
     hyprland = {
       enable = true;
-      nvidiaPatches = true;
+      enableNvidiaPatches = true;
       xwayland.enable = true;
     };
 
