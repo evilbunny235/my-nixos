@@ -4,6 +4,7 @@ theme = "everforest_light"
 line-number = "relative"
 cursorline = true
 bufferline = "multiple"
+shell = [ "zsh", "-c" ]
 
 [editor.cursor-shape]
 insert = "bar"
