@@ -62,7 +62,7 @@
         "hwmon-path": "/sys/class/thermal/thermal_zone3/temp",
         "critical-threshold": 85,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "network": {
         "format-wifi": "{signalStrength}% ",
