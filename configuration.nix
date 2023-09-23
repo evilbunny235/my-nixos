@@ -63,6 +63,7 @@
     };
 
     blueman.enable = true;
+    udisks2.enable = true;
   };
 
   security.pam.services.swaylock.text = "auth include login";
@@ -95,6 +96,7 @@
       swaylock-effects
       unrar
       unzrip
+      vlc
       waybar
       wget
       wlogout
