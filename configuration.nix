@@ -191,12 +191,17 @@
         plugins = [ "git" "man" ];
       };
     };
+
+    direnv.enable = true;
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -214,7 +219,7 @@
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ 30235 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
