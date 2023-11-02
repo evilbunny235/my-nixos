@@ -5,6 +5,7 @@ line-number = "relative"
 cursorline = true
 bufferline = "multiple"
 shell = [ "zsh", "-c" ]
+auto-save = true
 
 [editor.cursor-shape]
 insert = "bar"
