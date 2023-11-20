@@ -111,6 +111,7 @@
       pavucontrol
       polkit_gnome
       playerctl
+      qbittorrent
       ripgrep
       slurp
       swappy
