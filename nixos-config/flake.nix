@@ -39,7 +39,6 @@
           ./hosts/bogdan-nuc
         ];
       };
-
     };
   };
 }
