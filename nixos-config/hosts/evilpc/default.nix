@@ -90,6 +90,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      bemoji
       bibata-cursors
       btop
       eza
@@ -131,7 +132,10 @@
 
     shells = [pkgs.zsh];
     sessionVariables.NIXOS_OZONE_WL = "1";
-    variables.EDITOR = "hx";
+    variables = {
+      EDITOR = "hx";
+      BEMOJI_PICKER_CMD = "fuzzel --dmenu";
+    };
   };
 
   users = {
