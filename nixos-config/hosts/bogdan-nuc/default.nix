@@ -3,7 +3,10 @@
   pkgs,
   ...
 }: {
-  imports = [./hardware-configuration.nix];
+  imports = [
+    ./hardware-configuration.nix
+    ../../packages/scripts/screenshot.nix
+  ];
 
   boot.loader = {
     systemd-boot = {

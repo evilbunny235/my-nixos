@@ -3,7 +3,10 @@
   pkgs,
   ...
 }: {
-  imports = [./hardware-configuration.nix];
+  imports = [
+    ./hardware-configuration.nix
+    ../../packages/scripts/screenshot.nix
+  ];
 
   boot.loader = {
     # systemd-boot = {
@@ -97,10 +100,8 @@
       discord
       firefox
       fuzzel
-      grim
       helix
       helvum
-      jq
       kdiff3
       kitty
       lazygit
@@ -115,7 +116,6 @@
       qbittorrent
       ripgrep
       slurp
-      swappy
       swaybg
       swaylock-effects
       unrar
