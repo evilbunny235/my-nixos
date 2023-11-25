@@ -63,9 +63,7 @@
       eza
       firefox
       fuzzel
-      grim
       helix
-      jq
       kdiff3
       kitty
       lazygit
@@ -80,7 +78,6 @@
       ranger
       ripgrep
       slurp
-      swappy
       swaybg
       swaylock-effects
       unrar
