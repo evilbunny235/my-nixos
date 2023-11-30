@@ -94,6 +94,7 @@
       fuzzel
       helix
       helvum
+      hyprpaper
       kdiff3
       kitty
       lazygit
@@ -107,7 +108,6 @@
       qbittorrent
       ripgrep
       slurp
-      swaybg
       swaylock-effects
       unrar
       unzip
