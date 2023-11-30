@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/weather", "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "pulseaudio", "cpu", "temperature", "custom/gpu", "network", "clock"],
+    "modules-right": ["tray", "pulseaudio", "cpu", "temperature", "network", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -96,11 +96,11 @@
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type" : "json"
     },
-    "custom/gpu" :{
-        "exec": "nvidia-smi --query-gpu=utilization.gpu,utilization.memory --format=csv,noheader | sed -e 's/ //g' -e 's/,/  /'",
-        "tooltip": false,
-        "format": "{} ",
-        "interval": 5
-    },
+    // "custom/gpu" :{
+    //     "exec": "nvidia-smi --query-gpu=utilization.gpu,utilization.memory --format=csv,noheader | sed -e 's/ //g' -e 's/,/  /'",
+    //     "tooltip": false,
+    //     "format": "{} ",
+    //     "interval": 5
+    // },
 }
 

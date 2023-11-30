@@ -49,12 +49,6 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        amdvlk
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        driversi686Linux.amdvlk
-      ];
     };
 
     bluetooth.enable = true;
