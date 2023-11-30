@@ -8,34 +8,39 @@
     ../../packages/scripts/screenshot.nix
   ];
 
-  boot.loader = {
-    # systemd-boot = {
-    #   enable = true;
-    #   editor = false;
-    #   configurationLimit = 10;
-    # };
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    initrd.kernelModules = ["amdgpu"];
 
-    timeout = 1;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
+    loader = {
+      # systemd-boot = {
+      #   enable = true;
+      #   editor = false;
+      #   configurationLimit = 10;
+      # };
 
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      configurationLimit = 10;
-      extraEntries = ''
-        menuentry "Windows" {
-          insmod part_gpt
-          insmod fat
-          insmod search_fs_uuid
-          insmod chain
-          search --fs-uuid --set=root $FS_UUID
-          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        }
-      '';
+      timeout = 1;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        configurationLimit = 10;
+        extraEntries = ''
+          menuentry "Windows" {
+            insmod part_gpt
+            insmod fat
+            insmod search_fs_uuid
+            insmod chain
+            search --fs-uuid --set=root $FS_UUID
+            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+        '';
+      };
     };
   };
 
@@ -45,18 +50,11 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        nvidia-vaapi-driver
+        amdvlk
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
-        nvidia-vaapi-driver
+        driversi686Linux.amdvlk
       ];
-    };
-
-    nvidia = {
-      modesetting.enable = true;
-      open = true;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.production;
     };
 
     bluetooth.enable = true;
@@ -77,7 +75,6 @@
   };
 
   services = {
-    xserver.videoDrivers = ["nvidia"];
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -93,6 +90,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      amdgpu_top
       bemoji
       bibata-cursors
       btop
@@ -107,7 +105,6 @@
       lazygit
       mako
       nil
-      nvtop
       obs-studio
       path-of-building
       pavucontrol
@@ -176,7 +173,6 @@
     git.enable = true;
     hyprland = {
       enable = true;
-      enableNvidiaPatches = true;
       xwayland.enable = true;
     };
 
