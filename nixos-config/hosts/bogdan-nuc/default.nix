@@ -77,7 +77,6 @@
       playerctl
       ranger
       ripgrep
-      slurp
       swaybg
       swaylock-effects
       unrar

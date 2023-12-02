@@ -4,7 +4,7 @@
       name = "screenshot_area";
       runtimeInputs = with pkgs; [grim slurp swappy];
       text = ''
-        grim -g "$(slurp)" - | swappy -f -
+        grim -g "$(slurp -b 00000055 -c 00000000)" - | swappy -f -
       '';
     };
 

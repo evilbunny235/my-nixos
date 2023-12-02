@@ -107,7 +107,6 @@
       playerctl
       qbittorrent
       ripgrep
-      slurp
       swaylock-effects
       unrar
       unzip
