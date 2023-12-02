@@ -116,7 +116,6 @@
       wget
       wlogout
       wl-clipboard
-      xdg-desktop-portal-hyprland
       xdg-user-dirs
       xdg-utils
     ];
@@ -190,6 +189,11 @@
     };
 
     direnv.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   nix = {
