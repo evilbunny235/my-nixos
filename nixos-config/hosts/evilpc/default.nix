@@ -115,8 +115,10 @@
       wget
       wlogout
       wl-clipboard
+      wttrbar
       xdg-user-dirs
       xdg-utils
+      zoxide
     ];
 
     shells = [pkgs.zsh];
