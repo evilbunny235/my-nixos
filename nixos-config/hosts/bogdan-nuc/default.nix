@@ -63,6 +63,7 @@
       eza
       firefox
       fuzzel
+      fzf
       helix
       kdiff3
       kitty
@@ -86,9 +87,11 @@
       wget
       wlogout
       wl-clipboard
+      wttrbar
       xdg-desktop-portal-hyprland
       xdg-user-dirs
       xdg-utils
+      zoxide
     ];
 
     shells = [pkgs.zsh];

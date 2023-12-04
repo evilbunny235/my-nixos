@@ -92,6 +92,7 @@
       discord
       firefox
       fuzzel
+      fzf
       helix
       helvum
       hyprpaper
