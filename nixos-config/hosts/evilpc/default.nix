@@ -109,6 +109,7 @@
       qbittorrent
       ripgrep
       swaylock-effects
+      udiskie
       unrar
       unzip
       vlc

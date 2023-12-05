@@ -80,6 +80,7 @@
       ripgrep
       swaybg
       swaylock-effects
+      udiskie
       unrar
       unzip
       vlc
