@@ -64,6 +64,7 @@
       firefox
       fuzzel
       fzf
+      heaptrack
       helix
       kdiff3
       kitty
