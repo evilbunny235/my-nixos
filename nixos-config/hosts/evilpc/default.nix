@@ -84,11 +84,12 @@
   environment = {
     systemPackages = with pkgs; [
       amdgpu_top
+      armcord
       bemoji
       bibata-cursors
       btop
       eza
-      discord
+      diff-so-fancy
       firefox
       fuzzel
       fzf
@@ -99,9 +100,8 @@
       kitty
       lazygit
       mako
+      meld
       nil
-      obs-studio
-      path-of-building
       pavucontrol
       polkit_gnome
       playerctl
@@ -113,7 +113,6 @@
       unzip
       vlc
       waybar
-      wget
       wlogout
       wl-clipboard
       wttrbar
