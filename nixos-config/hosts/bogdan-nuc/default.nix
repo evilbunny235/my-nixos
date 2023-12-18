@@ -58,8 +58,10 @@
 
   environment = {
     systemPackages = with pkgs; [
+      awscli2
       bibata-cursors
       btop
+      diff-so-fancy
       eza
       firefox
       fuzzel
@@ -106,7 +108,7 @@
     users.bogdan = {
       isNormalUser = true;
       home = "/home/bogdan";
-      extraGroups = ["wheel" "networkmanager" "video"];
+      extraGroups = ["wheel" "networkmanager" "video" "docker"];
     };
   };
 
@@ -162,6 +164,8 @@
 
     direnv.enable = true;
   };
+
+  virtualisation.docker.enable = true;
 
   nix = {
     settings.experimental-features = ["nix-command" "flakes"];
