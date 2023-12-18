@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -58,7 +57,11 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # aws and kubernetes stuff
       awscli2
+      kubie
+      kubectl
+
       bibata-cursors
       btop
       diff-so-fancy
@@ -72,7 +75,7 @@
       kitty
       lazygit
       mako
-      meld # merge tool
+      meld
       nil
       nomacs # basic image editor
       obs-studio
