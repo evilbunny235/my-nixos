@@ -1,9 +1,7 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../common.nix
     ../../packages/scripts/screenshot.nix
   ];
 
@@ -18,42 +16,7 @@
     efi.canTouchEfiVariables = true;
   };
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-
-    bluetooth.enable = true;
-  };
-
-  networking = {
-    hostName = "bogdan-nuc";
-    networkmanager.enable = true;
-  };
-
-  time.timeZone = "Europe/Amsterdam";
-
-  i18n.defaultLocale = "en_IE.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "dvorak";
-  };
-
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    blueman.enable = true;
-    udisks2.enable = true;
-  };
-
-  security.pam.services.swaylock.text = "auth include login";
+  networking.hostName = "bogdan-nuc";
 
   environment = {
     systemPackages = with pkgs; [
@@ -62,122 +25,19 @@
       kubie
       kubectl
 
-      bibata-cursors
-      btop
-      diff-so-fancy
-      eza
-      firefox
-      fuzzel
-      fzf
       heaptrack
-      helix
-      kdiff3
-      kitty
-      lazygit
-      mako
-      meld
-      nil
-      nomacs # basic image editor
       obs-studio
-      pavucontrol
-      polkit_gnome
-      playerctl
       ranger
-      ripgrep
-      swaybg
-      swaylock-effects
-      udiskie
-      unrar
-      unzip
-      vlc
-      waybar
-      wget
-      wlogout
-      wl-clipboard
-      wttrbar
-      xdg-desktop-portal-hyprland
-      xdg-user-dirs
-      xdg-utils
-      zoxide
-    ];
-
-    shells = [pkgs.zsh];
-    sessionVariables.NIXOS_OZONE_WL = "1";
-    variables.EDITOR = "hx";
-  };
-
-  users = {
-    defaultUserShell = pkgs.zsh;
-    users.bogdan = {
-      isNormalUser = true;
-      home = "/home/bogdan";
-      extraGroups = ["wheel" "networkmanager" "video" "docker"];
-    };
-  };
-
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
-
-  fonts = {
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = ["Noto Serif" "Noto Color Emoji"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        monospace = ["Noto Sans" "Fira Code" "MesloLGS NF" "Noto Color Emoji"];
-        emoji = ["Noto Sans" "Noto Color Emoji"];
-      };
-    };
-
-    packages = with pkgs; [
-      dejavu_fonts
-      fira-code
-      meslo-lgs-nf
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
     ];
   };
 
-  programs = {
-    git.enable = true;
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
-    starship.enable = true;
-
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [thunar-archive-plugin tumbler];
-    };
-
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh = {
-        enable = true;
-        plugins = ["git" "man"];
-      };
-    };
-
-    direnv.enable = true;
+  users.users.bogdan = {
+    isNormalUser = true;
+    home = "/home/bogdan";
+    extraGroups = ["wheel" "networkmanager" "video" "docker"];
   };
 
   virtualisation.docker.enable = true;
-
-  nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

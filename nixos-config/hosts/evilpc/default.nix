@@ -1,10 +1,7 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../common.nix
     ../../packages/scripts/screenshot.nix
   ];
 
@@ -43,167 +40,26 @@
     };
   };
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-
-    bluetooth.enable = true;
-    xone.enable = true;
-  };
-
-  networking = {
-    hostName = "evilpc";
-    networkmanager.enable = true;
-  };
-
-  time.timeZone = "Europe/Amsterdam";
-
-  i18n.defaultLocale = "en_IE.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "dvorak";
-  };
-
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    blueman.enable = true;
-    udisks2.enable = true;
-  };
-
-  security.pam.services.swaylock.text = "auth include login";
+  hardware.xone.enable = true;
+  networking.hostName = "evilpc";
 
   environment = {
     systemPackages = with pkgs; [
       amdgpu_top
       armcord
-      bemoji
-      bibata-cursors
-      btop
-      eza
-      diff-so-fancy
-      firefox
-      fuzzel
-      fzf
-      helix
       helvum
-      hyprpaper
-      kdiff3
-      kitty
-      lazygit
-      mako
-      meld
-      nil
-      pavucontrol
-      polkit_gnome
-      playerctl
       qbittorrent
-      ripgrep
-      swaylock-effects
-      udiskie
-      unrar
-      unzip
-      vlc
-      waybar
-      wlogout
-      wl-clipboard
-      wttrbar
-      xdg-user-dirs
-      xdg-utils
-      zoxide
     ];
-
-    shells = [pkgs.zsh];
-    sessionVariables.NIXOS_OZONE_WL = "1";
-    variables = {
-      EDITOR = "hx";
-      BEMOJI_PICKER_CMD = "fuzzel --dmenu";
-    };
   };
 
-  users = {
-    defaultUserShell = pkgs.zsh;
-    users.evilbunny = {
-      isNormalUser = true;
-      home = "/home/evilbunny";
-      extraGroups = ["wheel" "networkmanager" "video"];
-    };
-  };
-
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
-
-  fonts = {
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = ["Noto Serif" "Noto Color Emoji"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        monospace = ["Noto Sans" "MesloLGS NF" "Noto Color Emoji"];
-        emoji = ["Noto Sans" "Noto Color Emoji"];
-      };
-    };
-
-    packages = with pkgs; [
-      dejavu_fonts
-      fira-code
-      meslo-lgs-nf
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-    ];
+  users.users.evilbunny = {
+    isNormalUser = true;
+    home = "/home/evilbunny";
+    extraGroups = ["wheel" "networkmanager" "video"];
   };
 
   programs = {
-    git.enable = true;
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
-    starship.enable = true;
     steam.enable = true;
-
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [thunar-archive-plugin tumbler];
-    };
-
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh = {
-        enable = true;
-        plugins = ["git" "man"];
-      };
-    };
-
-    direnv.enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
-  nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
