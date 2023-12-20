@@ -48,6 +48,7 @@
       amdgpu_top
       armcord
       helvum
+      path-of-building
       qbittorrent
     ];
   };
