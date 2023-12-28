@@ -50,7 +50,6 @@
       kdiff3
       kitty
       lazygit
-      mako
       meld
       nil
       nomacs # basic image editor
@@ -59,6 +58,7 @@
       playerctl
       ripgrep
       swaylock-effects
+      swaynotificationcenter
       udiskie
       unrar
       unzip
