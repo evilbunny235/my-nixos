@@ -24,6 +24,7 @@
       awscli2
       kubie
       kubectl
+      openlens
 
       heaptrack
       obs-studio

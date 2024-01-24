@@ -94,7 +94,7 @@
       defaultFonts = {
         serif = ["Noto Serif" "Noto Color Emoji"];
         sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        monospace = ["Noto Sans" "Fira Code" "MesloLGS NF" "Noto Color Emoji"];
+        monospace = ["Fira Code" "MesloLGS NF" "Noto Color Emoji"];
         emoji = ["Noto Sans" "Noto Color Emoji"];
       };
     };
