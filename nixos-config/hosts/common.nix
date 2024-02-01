@@ -37,6 +37,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      bat
       bemoji
       bibata-cursors
       btop
