@@ -26,6 +26,13 @@
       kubectl
       openlens
 
+      helmfile
+      kubernetes-helm
+      kubernetes-helmPlugins.helm-diff
+      kubernetes-helmPlugins.helm-git
+      kubernetes-helmPlugins.helm-s3
+      kubernetes-helmPlugins.helm-secrets
+
       heaptrack
       obs-studio
       ranger
