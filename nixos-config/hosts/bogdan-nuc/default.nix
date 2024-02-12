@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  cargo2nix = import (pkgs.fetchFromGitHub {
+    owner = "cargo2nix";
+    repo = "cargo2nix";
+    rev = "2cf825c2bd570e8561132f62cb9522258a4b4956";
+    sha256 = "sha256-b7ToXDqgTXsAWPluHEiFmiqaJwIrdSyJgyAOBfty5xo=";
+  });
+in {
   imports = [
     ./hardware-configuration.nix
     ../common.nix
@@ -33,6 +40,7 @@
       kubernetes-helmPlugins.helm-s3
       kubernetes-helmPlugins.helm-secrets
 
+      cargo2nix.packages.x86_64-linux.cargo2nix
       heaptrack
       obs-studio
       ranger
