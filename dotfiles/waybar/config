@@ -12,11 +12,19 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "on-click": "activate",
-        "format": "{name}",
+        "format": "{name} {windows}",
         "format-icons": {
             "urgent": "",
             "focused": "",
             "default": ""
+        },
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<firefox> title<.*youtube.*>": "",
+            "class<firefox>": "",
+            "class<firefox> title<.*Discord.*>": "󰙯",
+            "class<kitty>": "",
+            "class<steam>": "󰓓"
         }
     },
     "hyprland/window": {
