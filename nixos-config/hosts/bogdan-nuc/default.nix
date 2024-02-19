@@ -26,24 +26,24 @@ in {
   networking.hostName = "bogdan-nuc";
 
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = [
       # aws and kubernetes stuff
-      awscli2
-      kubie
-      kubectl
-      openlens
+      pkgs.awscli2
+      pkgs.kubie
+      pkgs.kubectl
+      pkgs.openlens
 
-      helmfile
-      kubernetes-helm
-      kubernetes-helmPlugins.helm-diff
-      kubernetes-helmPlugins.helm-git
-      kubernetes-helmPlugins.helm-s3
-      kubernetes-helmPlugins.helm-secrets
+      pkgs.helmfile
+      pkgs.kubernetes-helm
+      pkgs.kubernetes-helmPlugins.helm-diff
+      pkgs.kubernetes-helmPlugins.helm-git
+      pkgs.kubernetes-helmPlugins.helm-s3
+      pkgs.kubernetes-helmPlugins.helm-secrets
 
       cargo2nix.packages.x86_64-linux.cargo2nix
-      heaptrack
-      obs-studio
-      ranger
+      pkgs.heaptrack
+      pkgs.obs-studio
+      pkgs.ranger
     ];
   };
 

@@ -36,41 +36,41 @@
   security.pam.services.swaylock.text = "auth include login";
 
   environment = {
-    systemPackages = with pkgs; [
-      bat
-      bemoji
-      bibata-cursors
-      btop
-      eza
-      diff-so-fancy
-      firefox
-      fuzzel
-      fzf
-      helix
-      hyprpaper
-      kdiff3
-      kitty
-      lazygit
-      meld
-      nil
-      nomacs # basic image editor
-      pavucontrol
-      polkit_gnome
-      playerctl
-      ripgrep
-      swaylock-effects
-      swaynotificationcenter
-      udiskie
-      unrar
-      unzip
-      vlc
-      waybar
-      wlogout
-      wl-clipboard
-      wttrbar
-      xdg-user-dirs
-      xdg-utils
-      zoxide
+    systemPackages = [
+      pkgs.bat
+      pkgs.bemoji
+      pkgs.bibata-cursors
+      pkgs.btop
+      pkgs.eza
+      pkgs.diff-so-fancy
+      pkgs.firefox
+      pkgs.fuzzel
+      pkgs.fzf
+      pkgs.helix
+      pkgs.hyprpaper
+      pkgs.kdiff3
+      pkgs.kitty
+      pkgs.lazygit
+      pkgs.meld
+      pkgs.nil
+      pkgs.nomacs # basic image editor
+      pkgs.pavucontrol
+      pkgs.polkit_gnome
+      pkgs.playerctl
+      pkgs.ripgrep
+      pkgs.swaylock-effects
+      pkgs.swaynotificationcenter
+      pkgs.udiskie
+      pkgs.unrar
+      pkgs.unzip
+      pkgs.vlc
+      pkgs.waybar
+      pkgs.wlogout
+      pkgs.wl-clipboard
+      pkgs.wttrbar
+      pkgs.xdg-user-dirs
+      pkgs.xdg-utils
+      pkgs.zoxide
     ];
 
     shells = [pkgs.zsh];
@@ -100,13 +100,13 @@
       };
     };
 
-    packages = with pkgs; [
-      dejavu_fonts
-      fira-code
-      meslo-lgs-nf
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
+    packages = [
+      pkgs.dejavu_fonts
+      pkgs.fira-code
+      pkgs.meslo-lgs-nf
+      pkgs.noto-fonts
+      pkgs.noto-fonts-cjk
+      pkgs.noto-fonts-emoji
     ];
   };
 
@@ -121,7 +121,10 @@
 
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [thunar-archive-plugin tumbler];
+      plugins = [
+        pkgs.xfce.thunar-archive-plugin
+        pkgs.xfce.tumbler
+      ];
     };
 
     zsh = {

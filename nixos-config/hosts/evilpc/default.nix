@@ -44,12 +44,12 @@
   networking.hostName = "evilpc";
 
   environment = {
-    systemPackages = with pkgs; [
-      amdgpu_top
-      armcord
-      helvum
-      path-of-building
-      qbittorrent
+    systemPackages = [
+      pkgs.amdgpu_top
+      pkgs.armcord
+      pkgs.helvum
+      pkgs.path-of-building
+      pkgs.qbittorrent
     ];
   };
 
