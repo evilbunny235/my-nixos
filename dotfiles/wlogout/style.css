@@ -1,61 +1,62 @@
 window {
     font-family: monospace;
-    font-size: 14pt;
-    color: #ffffff; /* text */
-    background-color: rgba(30, 30, 46, 0.5);
+    font-size: 20px;
+    color: #ffffff;
+    background-color: rgba(15, 15, 15, 0.3);
 }
 
 button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
-    border: none;
-    background-color: rgba(30, 30, 46, 0);
-    margin: 5px;
+    border: 3px solid #ffffff;
+    background-color: #F3EAD3;
     transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    color: #ffffff; /* text */
+    color: #5C6A72;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover,
+button:active,
+button:focus {
+    border: 3px solid #5C6A72;
 }
 
 button:hover {
-    background-color: rgba(49, 50, 68, 0.1);
+    background-color: #D8D3BA;
 }
 
 button:focus {
-    background-color: #cba6f7;
-    color: #1e1e2e;
+    background-color: rgb(147, 178, 89);
+    color: #ffffff;
 }
 
 #lock {
-    background-image: image(url("./lock.png"));
-}
-#lock:focus {
-    background-image: image(url("./lock-hover.png"));
+    margin: 10px;
+    border-radius: 20px;
+    background-image: image(url("icons/lock.png"));
 }
 
 #logout {
-    background-image: image(url("./logout.png"));
-}
-#logout:focus {
-    background-image: image(url("./logout-hover.png"));
+    margin: 10px;
+    border-radius: 20px;
+    background-image: image(url("icons/logout.png"));
 }
 
 #suspend {
-    background-image: image(url("./sleep.png"));
-}
-#suspend:focus {
-    background-image: image(url("./sleep-hover.png"));
+    margin: 10px;
+    border-radius: 20px;
+    background-image: image(url("icons/sleep.png"));
 }
 
 #shutdown {
-    background-image: image(url("./power.png"));
-}
-#shutdown:focus {
-    background-image: image(url("./power-hover.png"));
+    margin: 10px;
+    border-radius: 20px;
+    background-image: image(url("icons/power.png"));
 }
 
 #reboot {
-    background-image: image(url("./restart.png"));
-}
-#reboot:focus {
-    background-image: image(url("./restart-hover.png"));
+    margin: 10px;
+    border-radius: 20px;
+    background-image: image(url("icons/restart.png"));
 }

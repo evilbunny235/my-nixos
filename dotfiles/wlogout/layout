@@ -22,8 +22,3 @@
     "text" : "Logout",
     "keybind" : "o"
 }
-{
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
-}
