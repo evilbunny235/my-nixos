@@ -27,11 +27,14 @@
       pkgs.openlens
 
       pkgs.helmfile
-      pkgs.kubernetes-helm
-      pkgs.kubernetes-helmPlugins.helm-diff
-      pkgs.kubernetes-helmPlugins.helm-git
-      pkgs.kubernetes-helmPlugins.helm-s3
-      pkgs.kubernetes-helmPlugins.helm-secrets
+      (pkgs.wrapHelm pkgs.kubernetes-helm {
+        plugins = [
+          pkgs.kubernetes-helmPlugins.helm-diff
+          pkgs.kubernetes-helmPlugins.helm-git
+          pkgs.kubernetes-helmPlugins.helm-s3
+          pkgs.kubernetes-helmPlugins.helm-secrets
+        ];
+      })
 
       pkgs.heaptrack
       pkgs.obs-studio
