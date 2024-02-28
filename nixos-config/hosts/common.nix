@@ -144,7 +144,13 @@ in {
       syntaxHighlighting.enable = true;
       ohMyZsh = {
         enable = true;
-        plugins = ["git" "man"];
+        plugins = [
+          "direnv"
+          "fancy-ctrl-z"
+          "git"
+          "man"
+          "zoxide"
+        ];
       };
     };
 
