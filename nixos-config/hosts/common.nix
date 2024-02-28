@@ -55,7 +55,6 @@ in {
       pkgs.firefox
       pkgs.fuzzel
       pkgs.fzf
-      pkgs.gnome.adwaita-icon-theme
       pkgs.helix
       pkgs.hyprpaper
       pkgs.kdiff3
