@@ -149,7 +149,6 @@ in {
           "fancy-ctrl-z"
           "git"
           "man"
-          "zoxide"
         ];
       };
     };
