@@ -23,6 +23,7 @@
             "class<firefox> title<.*youtube.*>": "",
             "class<firefox>": "",
             "class<firefox> title<.*Discord.*>": "󰙯",
+            "class<ArmCord>": "󰙯",
             "class<kitty>": "",
             "class<steam>": "󰓓"
         }
