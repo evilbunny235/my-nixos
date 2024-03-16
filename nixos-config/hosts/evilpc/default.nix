@@ -48,6 +48,7 @@
       pkgs.amdgpu_top
       pkgs.armcord
       pkgs.helvum
+      pkgs.obs-studio
       pkgs.path-of-building
       pkgs.qbittorrent
     ];
