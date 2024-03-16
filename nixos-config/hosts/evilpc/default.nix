@@ -9,33 +9,16 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
-      # systemd-boot = {
-      #   enable = true;
-      #   editor = false;
-      #   configurationLimit = 10;
-      # };
+      systemd-boot = {
+        enable = true;
+        editor = false;
+        configurationLimit = 5;
+      };
 
       timeout = 1;
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
-      };
-
-      grub = {
-        enable = true;
-        efiSupport = true;
-        device = "nodev";
-        configurationLimit = 10;
-        extraEntries = ''
-          menuentry "Windows" {
-            insmod part_gpt
-            insmod fat
-            insmod search_fs_uuid
-            insmod chain
-            search --fs-uuid --set=root $FS_UUID
-            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-          }
-        '';
       };
     };
   };
