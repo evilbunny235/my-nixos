@@ -70,6 +70,7 @@ in {
       pkgs.sd
       pkgs.swaylock-effects
       pkgs.swaynotificationcenter
+      pkgs.tldr
       pkgs.udiskie
       pkgs.unrar
       pkgs.unzip
