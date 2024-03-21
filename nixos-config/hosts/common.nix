@@ -162,10 +162,13 @@ in {
   };
 
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      warn-dirty = false;
+    };
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "daily";
       options = "--delete-older-than 7d";
     };
   };
