@@ -41,7 +41,7 @@
     },
     "clock": {
         "tooltip-format": "<span size='10pt' font='Fira Code'>{calendar}</span>",
-        "format": "{: %R   %d-%b}",
+        "format": " {:%R  %d-%b}",
         "calendar": {
             "mode": "year",
             "mode-mon-col": 3,
