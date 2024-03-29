@@ -1,11 +1,4 @@
-{pkgs, ...}: let
-  cargo2nix = import (pkgs.fetchFromGitHub {
-    owner = "cargo2nix";
-    repo = "cargo2nix";
-    rev = "2cf825c2bd570e8561132f62cb9522258a4b4956";
-    sha256 = "sha256-b7ToXDqgTXsAWPluHEiFmiqaJwIrdSyJgyAOBfty5xo=";
-  });
-in {
+{pkgs, ...}: {
   hardware = {
     opengl = {
       enable = true;
@@ -44,8 +37,6 @@ in {
 
   environment = {
     systemPackages = [
-      cargo2nix.packages.x86_64-linux.cargo2nix
-
       pkgs.bat
       pkgs.bemoji
       pkgs.bibata-cursors
