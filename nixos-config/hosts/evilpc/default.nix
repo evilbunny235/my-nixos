@@ -29,7 +29,6 @@
   environment = {
     systemPackages = [
       pkgs.amdgpu_top
-      pkgs.armcord
       pkgs.helvum
       pkgs.obs-studio
       pkgs.path-of-building
@@ -46,8 +45,6 @@
   programs = {
     steam.enable = true;
   };
-
-  services.upower.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
