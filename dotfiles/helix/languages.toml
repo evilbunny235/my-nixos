@@ -1,5 +1,8 @@
 [[language]]
 name = "nix"
-auto-format = true
 file-types = ["nix"]
 indent = { unit = " ", tab-width = 2 }
+
+[[language]]
+name = "cpp"
+auto-format = true
