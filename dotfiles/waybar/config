@@ -20,10 +20,9 @@
         },
         "window-rewrite-default": "",
         "window-rewrite": {
-            "class<firefox> title<.*youtube.*>": "",
             "class<firefox>": "",
-            "class<firefox> title<.*Discord.*>": "󰙯",
             "class<ArmCord>": "󰙯",
+            "class<vesktop>": "󰙯",
             "class<kitty>": "",
             "class<steam>": "󰓓"
         }

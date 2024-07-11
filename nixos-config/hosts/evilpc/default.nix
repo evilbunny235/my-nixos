@@ -29,10 +29,13 @@
   environment = {
     systemPackages = [
       pkgs.amdgpu_top
+      pkgs.gimp
       pkgs.helvum
       pkgs.obs-studio
       pkgs.path-of-building
       pkgs.qbittorrent
+      pkgs.vesktop
+      pkgs.wine64
     ];
   };
 
