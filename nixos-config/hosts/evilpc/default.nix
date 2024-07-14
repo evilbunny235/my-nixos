@@ -31,6 +31,7 @@
       pkgs.amdgpu_top
       pkgs.gimp
       pkgs.helvum
+      pkgs.lutris
       pkgs.obs-studio
       pkgs.path-of-building
       pkgs.qbittorrent
@@ -63,6 +64,8 @@
     enable = true;
     package = pkgs.mysql84;
   };
+
+  systemd.services.mysql.wantedBy = pkgs.lib.mkForce [];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
