@@ -40,5 +40,14 @@
         ];
       };
     };
+
+    templates = {
+      rust = {
+        path = ./templates/rust;
+      };
+      cpp = {
+        path = ./templates/cpp;
+      };
+    };
   };
 }
