@@ -31,9 +31,11 @@
       pkgs.amdgpu_top
       pkgs.gimp
       pkgs.helvum
+      pkgs.qpwgraph
       pkgs.lutris
       pkgs.obs-studio
       pkgs.path-of-building
+      pkgs.prismlauncher
       pkgs.qbittorrent
       pkgs.vesktop
       pkgs.wine64

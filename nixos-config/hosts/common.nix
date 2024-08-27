@@ -35,7 +35,6 @@
 
   environment = {
     systemPackages = [
-      pkgs.bat
       pkgs.bemoji
       pkgs.bibata-cursors
       pkgs.btop
@@ -111,6 +110,7 @@
   };
 
   programs = {
+    file-roller.enable = true;
     git.enable = true;
     hyprland = {
       enable = true;
