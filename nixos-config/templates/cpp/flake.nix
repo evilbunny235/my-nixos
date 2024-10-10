@@ -48,7 +48,6 @@
         mkdir -p $out/bin
         cp ${project_name} $out/bin
       '';
-
     };
   };
 }
