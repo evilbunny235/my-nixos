@@ -24,7 +24,8 @@
             "class<ArmCord>": "󰙯",
             "class<vesktop>": "󰙯",
             "class<kitty>": "",
-            "class<steam>": "󰓓"
+            "class<steam>": "󰓓",
+            "class<Thunar>": ""
         }
     },
     "hyprland/window": {
