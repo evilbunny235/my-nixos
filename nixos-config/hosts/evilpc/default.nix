@@ -35,16 +35,6 @@
     steam.enable = true;
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd Hyprland";
-        user = "greeter";
-      };
-    };
-  };
-
   services.mysql = {
     enable = true;
     package = pkgs.mysql84;

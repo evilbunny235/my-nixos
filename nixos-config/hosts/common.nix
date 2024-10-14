@@ -45,6 +45,16 @@
       pulse.enable = true;
     };
 
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd Hyprland";
+          user = "greeter";
+        };
+      };
+    };
+
     blueman.enable = true;
     udisks2.enable = true;
   };
