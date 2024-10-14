@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../common.nix
     ../../packages/scripts/screenshot.nix
+    ../../packages/scripts/tv.nix
   ];
 
   boot = {
