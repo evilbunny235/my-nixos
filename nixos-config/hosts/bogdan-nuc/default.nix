@@ -5,17 +5,6 @@
     ../../packages/scripts/screenshot.nix
   ];
 
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      editor = false;
-      configurationLimit = 10;
-    };
-
-    timeout = 1;
-    efi.canTouchEfiVariables = true;
-  };
-
   networking.hostName = "bogdan-nuc";
 
   environment = {

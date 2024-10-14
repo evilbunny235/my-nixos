@@ -1,4 +1,22 @@
 {pkgs, ...}: {
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    loader = {
+      systemd-boot = {
+        enable = true;
+        editor = false;
+        configurationLimit = 5;
+      };
+
+      timeout = 1;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
+  };
+
   hardware = {
     graphics = {
       enable = true;
