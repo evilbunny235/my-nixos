@@ -22,6 +22,10 @@
       pkgs.qbittorrent
       pkgs.vesktop
       pkgs.wine64
+
+      pkgs.jellyfin
+      pkgs.jellyfin-web
+      pkgs.jellyfin-ffmpeg
     ];
   };
 
@@ -29,6 +33,11 @@
     isNormalUser = true;
     home = "/home/evilbunny";
     extraGroups = ["wheel" "networkmanager" "video"];
+  };
+
+  users.users.jellyfin = {
+    isNormalUser = true;
+    extraGroups = ["video" "render"];
   };
 
   programs = {
@@ -41,6 +50,12 @@
   };
 
   systemd.services.mysql.wantedBy = pkgs.lib.mkForce [];
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+    user = "evilbunny";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
