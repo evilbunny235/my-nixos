@@ -63,6 +63,7 @@
 
   environment = {
     systemPackages = [
+      pkgs.alacritty
       pkgs.bemoji
       pkgs.bibata-cursors
       pkgs.btop
