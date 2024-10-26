@@ -24,6 +24,7 @@
             "class<ArmCord>": "󰙯",
             "class<vesktop>": "󰙯",
             "class<kitty>": "",
+            "class<Alacritty>": "",
             "class<steam>": "󰓓",
             "class<Thunar>": ""
         }
@@ -59,11 +60,11 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] kitty -e btop\""
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] kitty -e btop\""
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
     },
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
