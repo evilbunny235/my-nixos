@@ -81,6 +81,7 @@
       pkgs.nil
       pkgs.nomacs # basic image editor
       pkgs.pavucontrol
+      pkgs.pinta
       pkgs.polkit_gnome
       pkgs.playerctl
       pkgs.ripgrep
