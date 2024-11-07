@@ -20,6 +20,7 @@
       pkgs.path-of-building
       pkgs.prismlauncher
       pkgs.qbittorrent
+      pkgs.deluge
       pkgs.vesktop
       pkgs.wine64
 
