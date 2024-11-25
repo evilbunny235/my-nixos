@@ -18,7 +18,6 @@
       pkgs.kdePackages.kdenlive
       pkgs.lutris
       pkgs.mangohud
-      pkgs.nwg-look
       pkgs.obs-studio
       pkgs.path-of-building
       pkgs.prismlauncher

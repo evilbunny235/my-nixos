@@ -79,7 +79,7 @@
       pkgs.lazygit
       pkgs.meld
       pkgs.nil
-      pkgs.nomacs # basic image editor
+      pkgs.nwg-look
       pkgs.pavucontrol
       pkgs.pinta
       pkgs.polkit_gnome
