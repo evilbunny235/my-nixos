@@ -39,11 +39,6 @@
     extraGroups = ["wheel" "networkmanager" "video"];
   };
 
-  users.users.jellyfin = {
-    isNormalUser = true;
-    extraGroups = ["video" "render"];
-  };
-
   programs = {
     steam.enable = true;
   };
