@@ -88,7 +88,7 @@
       pkgs.sd
       pkgs.swaylock-effects
       pkgs.swaynotificationcenter
-      pkgs.tldr
+      pkgs.tealdeer
       pkgs.udiskie
       pkgs.unrar
       pkgs.unzip
