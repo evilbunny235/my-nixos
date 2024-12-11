@@ -29,14 +29,21 @@
       pkgs.jellyfin
       pkgs.jellyfin-web
       pkgs.jellyfin-ffmpeg
+
+      # kubernetes
+      pkgs.kubectl
+      pkgs.kubernetes-helm
+      pkgs.k3d
     ];
   };
 
   users.users.evilbunny = {
     isNormalUser = true;
     home = "/home/evilbunny";
-    extraGroups = ["wheel" "networkmanager" "video"];
+    extraGroups = ["wheel" "networkmanager" "video" "docker"];
   };
+
+  # virtualisation.docker.enable = true;
 
   programs = {
     steam.enable = true;
