@@ -134,7 +134,7 @@
       pkgs.fira-code
       pkgs.meslo-lgs-nf
       pkgs.noto-fonts
-      pkgs.noto-fonts-cjk
+      pkgs.noto-fonts-cjk-sans
       pkgs.noto-fonts-emoji
     ];
   };
