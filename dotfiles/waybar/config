@@ -26,7 +26,7 @@
             "class<kitty>": "",
             "class<Alacritty>": "",
             "class<steam>": "󰓓",
-            "class<Thunar>": ""
+            "class<Thunar>": "󰉋"
         }
     },
     "hyprland/window": {
@@ -96,7 +96,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
     },
