@@ -13,6 +13,7 @@
     systemPackages = [
       pkgs.amdgpu_top
       pkgs.gimp
+      pkgs.headsetcontrol
       pkgs.helvum
       pkgs.qpwgraph
       pkgs.kdePackages.kdenlive
@@ -36,6 +37,8 @@
       pkgs.k3d
     ];
   };
+
+  services.udev.packages = [pkgs.headsetcontrol];
 
   users.users.evilbunny = {
     isNormalUser = true;
