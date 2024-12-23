@@ -19,13 +19,10 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = [
-        pkgs.rust-analyzer-unwrapped
-      ];
-
       packages = [
         rust_toolchain
         pkgs.lldb
+        pkgs.rust-analyzer-unwrapped
       ];
 
       RUST_SRC_PATH = "${rust_toolchain}/lib/rustlib/src/rust/library";
