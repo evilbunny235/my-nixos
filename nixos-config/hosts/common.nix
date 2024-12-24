@@ -142,6 +142,7 @@
   programs = {
     file-roller.enable = true;
     git.enable = true;
+
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -185,10 +186,14 @@
       experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
     };
+
     gc = {
       automatic = true;
       dates = "daily";
       options = "--delete-older-than 7d";
     };
+
+    registry.nixpkgs.flake = pkgs;
+    nixPath = ["nixpkgs=flake:nixpkgs"];
   };
 }

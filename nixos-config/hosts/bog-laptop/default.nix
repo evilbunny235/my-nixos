@@ -8,8 +8,10 @@
   networking.hostName = "bog-laptop";
 
   hardware = {
-    tuxedo-drivers.enable = true;
-    tuxedo-control-center.enable = true;
+    tuxedo-rs = {
+      enable = true;
+      tailor-gui.enable = true;
+    };
   };
 
   environment = {
