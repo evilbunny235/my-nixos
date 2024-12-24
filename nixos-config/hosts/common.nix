@@ -192,8 +192,5 @@
       dates = "daily";
       options = "--delete-older-than 7d";
     };
-
-    registry.nixpkgs.flake = pkgs;
-    nixPath = ["nixpkgs=flake:nixpkgs"];
   };
 }
