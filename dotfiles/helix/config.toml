@@ -17,3 +17,7 @@ hidden = false
 
 [editor.lsp]
 display-inlay-hints = true
+
+[keys.normal]
+"A-h" = "goto_previous_buffer"
+"A-l" = "goto_next_buffer"
