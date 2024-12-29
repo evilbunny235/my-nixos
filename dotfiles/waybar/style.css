@@ -63,6 +63,7 @@ tooltip {
 #backlight,
 #cpu,
 #temperature,
+#language,
 #memory {
     background: #1e1e2e;
     padding: 0px 10px;
