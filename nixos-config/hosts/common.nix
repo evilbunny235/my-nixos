@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, ghostty, ...}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -63,7 +63,6 @@
 
   environment = {
     systemPackages = [
-      pkgs.alacritty
       pkgs.bemoji
       pkgs.bibata-cursors
       pkgs.btop
@@ -72,10 +71,10 @@
       pkgs.firefox
       pkgs.fuzzel
       pkgs.fzf
+      ghostty.packages.${pkgs.system}.ghostty
       pkgs.helix
       pkgs.hyprpaper
       pkgs.kdiff3
-      pkgs.kitty
       pkgs.lazygit
       pkgs.meld
       pkgs.nil

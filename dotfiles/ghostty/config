@@ -1,0 +1,8 @@
+window-decoration = false
+theme = everforest_light
+confirm-close-surface = false
+font-family = "Fira Code"
+font-variation = "wght=500"
+font-size = 11
+font-synthetic-style = true
+resize-overlay = never
