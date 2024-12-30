@@ -72,6 +72,7 @@
       pkgs.fuzzel
       pkgs.fzf
       ghostty.packages.${pkgs.system}.ghostty
+      pkgs.gtrash
       pkgs.helix
       pkgs.hyprpaper
       pkgs.kdiff3
