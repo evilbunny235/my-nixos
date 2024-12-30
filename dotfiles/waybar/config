@@ -25,6 +25,7 @@
             "class<vesktop>": "󰙯",
             "class<kitty>": "",
             "class<Alacritty>": "",
+            "class<com.mitchellh.ghostty>": "",
             "class<steam>": "󰓓",
             "class<Thunar>": "󰉋"
         }
@@ -55,16 +56,22 @@
                 "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
                 "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
             }
+        },
+        "actions":  {
+            "on-click": "shift_reset",
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
         }
     },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] ghostty -e btop\""
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] alacritty -e btop\""
+        "on-click": "hyprctl dispatch exec \"[float;size 1539 940;center] ghostty -e btop\""
     },
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
