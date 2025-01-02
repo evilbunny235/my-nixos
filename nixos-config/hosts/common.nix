@@ -1,4 +1,8 @@
-{pkgs, ghostty, ...}: {
+{
+  pkgs,
+  ghostty,
+  ...
+}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
 

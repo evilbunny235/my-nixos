@@ -12,7 +12,7 @@
   outputs = {
     self,
     nixpkgs,
-    ghostty
+    ghostty,
   }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
@@ -29,6 +29,9 @@
 
       bog-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          inherit ghostty;
+        };
         modules = [
           ./hosts/bog-laptop
         ];
