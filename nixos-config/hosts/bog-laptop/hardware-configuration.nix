@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -13,13 +12,14 @@
   ];
 
   boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci"];
-  boot.initrd.kernelModules = [];
+  boot.initrd.kernelModules = ["yt6801"];
   boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot.extraModulePackages = [config.boot.kernelPackages.yt6801];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c3a7d4b5-e368-46d0-a2b3-3050bcc328ec";
     fsType = "ext4";
+    options = ["noatime"];
   };
 
   boot.initrd.luks.devices."luks-649cf6c0-c638-44e9-93a7-2403071af1bd".device = "/dev/disk/by-uuid/649cf6c0-c638-44e9-93a7-2403071af1bd";
