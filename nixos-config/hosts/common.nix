@@ -1,6 +1,5 @@
 {
   pkgs,
-  ghostty,
   ...
 }: {
   boot = {
@@ -75,7 +74,7 @@
       pkgs.firefox
       pkgs.fuzzel
       pkgs.fzf
-      ghostty.packages.${pkgs.system}.ghostty
+      pkgs.ghostty
       pkgs.gtrash
       pkgs.helix
       pkgs.hyprpaper
