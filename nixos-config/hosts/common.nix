@@ -108,9 +108,17 @@
 
     shells = [pkgs.zsh];
     sessionVariables.NIXOS_OZONE_WL = "1";
+
     variables = {
       EDITOR = "hx";
       BEMOJI_PICKER_CMD = "fuzzel --dmenu";
+    };
+
+    shellAliases = {
+      ip = "ip --color";
+      ls = "eza --icons";
+      tp = "gtrash put";
+      trash_empty = "gtrash prune --day 7";
     };
   };
 
@@ -167,6 +175,7 @@
       autosuggestions.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
+
       ohMyZsh = {
         enable = true;
         plugins = [
@@ -176,6 +185,11 @@
           "man"
         ];
       };
+
+      interactiveShellInit = ''
+        eval "$(zoxide init zsh)"
+        HIST_STAMPS="%F %T"
+      '';
     };
 
     direnv.enable = true;
