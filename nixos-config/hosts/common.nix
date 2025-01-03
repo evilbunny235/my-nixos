@@ -112,6 +112,7 @@
     variables = {
       EDITOR = "hx";
       BEMOJI_PICKER_CMD = "fuzzel --dmenu";
+      HIST_STAMPS = "%F %T";
     };
 
     shellAliases = {
@@ -183,13 +184,9 @@
           "fancy-ctrl-z"
           "git"
           "man"
+          "zoxide"
         ];
       };
-
-      interactiveShellInit = ''
-        eval "$(zoxide init zsh)"
-        HIST_STAMPS="%F %T"
-      '';
     };
 
     direnv.enable = true;
