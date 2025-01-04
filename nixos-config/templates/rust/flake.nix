@@ -18,7 +18,6 @@
       overlays = [rust-overlay.overlays.default];
     };
     rust_toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
-    docker_image_tag = "latest";
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
@@ -48,8 +47,8 @@
         };
 
       docker_img_sender = pkgs.dockerTools.buildLayeredImage {
-        inherit docker_image_tag;
-        name = AAAA.name;
+        name = AAAA.pname;
+        tag = AAAA.version;
         config = {
           Cmd = ["${AAAA}/bin/AAAA"];
         };
