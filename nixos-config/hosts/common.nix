@@ -96,7 +96,6 @@
       pkgs.unrar
       pkgs.unzip
       pkgs.vlc
-      pkgs.waybar
       pkgs.wlogout
       pkgs.wl-clipboard
       pkgs.wttrbar
@@ -184,6 +183,8 @@
         pkgs.xfce.tumbler
       ];
     };
+
+    waybar.enable = true;
 
     zsh = {
       enable = true;
