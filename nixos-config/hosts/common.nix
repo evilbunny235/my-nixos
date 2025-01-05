@@ -120,6 +120,7 @@
       ls = "eza --icons";
       tp = "gtrash put";
       trash_empty = "gtrash prune --day 7";
+      k = "kubectl";
     };
   };
 
