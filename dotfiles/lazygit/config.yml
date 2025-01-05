@@ -1,6 +1,0 @@
-gui:
-  scrollHeight: 10
-git:
-  paging:
-    colorArg: always
-    pager: diff-so-fancy

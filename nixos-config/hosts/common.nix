@@ -80,7 +80,6 @@
       pkgs.helix
       pkgs.hyprpaper
       pkgs.kdiff3
-      pkgs.lazygit
       pkgs.meld
       pkgs.nil
       pkgs.nwg-look
@@ -160,6 +159,20 @@
     hyprland = {
       enable = true;
       xwayland.enable = true;
+    };
+
+    lazygit = {
+      enable = true;
+      settings = {
+        gui = {
+          scrollHeight = 10;
+          nerdFontsVersion = 3;
+        };
+        git.paging = {
+          colorArg = "always";
+          pager = "diff-so-fancy";
+        };
+      };
     };
 
     starship.enable = true;
