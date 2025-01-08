@@ -6,3 +6,6 @@ font-variation = "wght=500"
 font-size = 11
 font-synthetic-style = true
 resize-overlay = never
+keybind = ctrl+enter=ignore
+keybind = shift+up=scroll_page_lines:-1
+keybind = shift+down=scroll_page_lines:1
