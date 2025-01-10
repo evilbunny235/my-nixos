@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -188,9 +185,20 @@
 
     zsh = {
       enable = true;
+      histSize = 10000;
       autosuggestions.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
+
+      setOptions = [
+        "SHARE_HISTORY"
+        "HIST_FCNTL_LOCK"
+        "HIST_IGNORE_SPACE"
+        "HIST_IGNORE_DUPS"
+        "HIST_IGNORE_ALL_DUPS"
+        "HIST_FIND_NO_DUPS"
+        "HIST_SAVE_NO_DUPS"
+      ];
 
       ohMyZsh = {
         enable = true;
@@ -202,6 +210,14 @@
           "zoxide"
         ];
       };
+
+      shellInit = ''
+        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+
+        bindkey '^p' history-search-backward
+        bindkey '^n' history-search-forward
+
+      '';
     };
 
     direnv.enable = true;
