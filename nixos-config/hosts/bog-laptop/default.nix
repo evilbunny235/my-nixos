@@ -30,6 +30,10 @@
     extraGroups = ["wheel" "networkmanager" "video" "docker"];
   };
 
+  services.greetd.settings.default_session.command = ''
+    ${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_bog-laptop.conf"
+  '';
+
   virtualisation.docker.enable = true;
 
   services.tlp = {

@@ -48,12 +48,7 @@
     greetd = {
       enable = true;
       vt = 2;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd Hyprland";
-          user = "greeter";
-        };
-      };
+      settings.default_session.user = "greeter";
     };
 
     blueman.enable = true;
@@ -232,6 +227,7 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
+      auto-optimise-store = true;
     };
 
     gc = {
