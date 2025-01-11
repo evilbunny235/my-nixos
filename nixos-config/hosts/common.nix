@@ -206,6 +206,7 @@
         plugins = [
           "direnv"
           "fancy-ctrl-z"
+          "fzf"
           "git"
           "man"
           "zoxide"
@@ -213,11 +214,10 @@
       };
 
       shellInit = ''
-        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+        FZF_DEFAULT_OPTS="--color=light"
 
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward
-
       '';
     };
 
