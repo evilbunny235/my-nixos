@@ -20,8 +20,6 @@
     systemPackages = [
       pkgs.brightnessctl
       pkgs.jq
-      pkgs.heaptrack
-      pkgs.ranger
       pkgs.vesktop
     ];
   };
