@@ -47,8 +47,8 @@
   };
 
   services.greetd.settings.default_session.command = ''
-      ${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_evilpc.conf"
-    '';
+    ${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_evilpc.conf"
+  '';
 
   # virtualisation.docker.enable = true;
 
