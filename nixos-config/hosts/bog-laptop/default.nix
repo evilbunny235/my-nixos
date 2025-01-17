@@ -21,7 +21,6 @@
       pkgs.brightnessctl
       pkgs.jq
       pkgs.vesktop
-      pkgs.zip
     ];
   };
 
