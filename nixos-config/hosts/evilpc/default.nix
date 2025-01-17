@@ -33,7 +33,7 @@
 
       pkgs.kubectl
       pkgs.kubernetes-helm
-      pkgs.k3d
+      pkgs.minikube
       pkgs.dive
     ];
   };
