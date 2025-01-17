@@ -156,6 +156,7 @@
     lazygit = {
       enable = true;
       settings = {
+        promptToReturnFromSubprocess = false;
         gui = {
           scrollHeight = 10;
           nerdFontsVersion = 3;
