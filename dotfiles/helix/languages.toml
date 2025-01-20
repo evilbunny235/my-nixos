@@ -6,3 +6,7 @@ indent = { unit = " ", tab-width = 2 }
 [[language]]
 name = "cpp"
 auto-format = true
+
+[[language]]
+name = "c"
+auto-format = true
