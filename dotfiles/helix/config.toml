@@ -6,6 +6,7 @@ cursorline = true
 bufferline = "multiple"
 shell = [ "zsh", "-c" ]
 auto-save = true
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -14,6 +15,9 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [editor.lsp]
 display-inlay-hints = true
