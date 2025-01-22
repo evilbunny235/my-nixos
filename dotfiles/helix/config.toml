@@ -6,7 +6,6 @@ cursorline = true
 bufferline = "multiple"
 shell = [ "zsh", "-c" ]
 auto-save = true
-end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
