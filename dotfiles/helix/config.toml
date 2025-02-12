@@ -24,3 +24,6 @@ display-inlay-hints = true
 [keys.normal]
 "A-h" = "goto_previous_buffer"
 "A-l" = "goto_next_buffer"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-absolute-path", "read-only-indicator", "file-modification-indicator"]
