@@ -20,14 +20,20 @@
     systemPackages = [
       pkgs.brightnessctl
       pkgs.jq
+      pkgs.tcpdump
       pkgs.vesktop
+      pkgs.wireshark
     ];
+  };
+
+  programs = {
+    wireshark.enable = true;
   };
 
   users.users.bogdan = {
     isNormalUser = true;
     home = "/home/bogdan";
-    extraGroups = ["wheel" "networkmanager" "video" "docker"];
+    extraGroups = ["wheel" "networkmanager" "video" "docker" "wireshark"];
   };
 
   services.greetd.settings.default_session.command = ''
