@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  postgresql_port = 5432;
+in {
   imports = [
     ./hardware-configuration.nix
     ../common.nix
@@ -19,6 +21,7 @@
   environment = {
     systemPackages = [
       pkgs.brightnessctl
+      pkgs.beekeeper-studio
       pkgs.jq
       pkgs.tcpdump
       pkgs.vesktop
@@ -62,7 +65,22 @@
     };
   };
 
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    settings.port = postgresql_port;
+    authentication = pkgs.lib.mkOverride 10 ''
+      # type database DBuser origin-address auth-method
+      local  all      all     trust
+
+      # ipv4
+      host   all      all     10.0.100.0/24   trust
+      # ipv6
+      host   all      all     ::1/128         trust
+    '';
+  };
+
+  networking.firewall.allowedTCPPorts = [postgresql_port];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   system.stateVersion = "24.11";
