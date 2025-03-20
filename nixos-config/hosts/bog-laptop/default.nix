@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   postgresql_port = 5432;
+  keydb_port = 6379;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -23,6 +24,7 @@ in {
       pkgs.brightnessctl
       pkgs.beekeeper-studio
       pkgs.jq
+      pkgs.keydb
       pkgs.tcpdump
       pkgs.vesktop
       pkgs.wireshark
@@ -80,7 +82,7 @@ in {
     '';
   };
 
-  networking.firewall.allowedTCPPorts = [postgresql_port];
+  networking.firewall.allowedTCPPorts = [postgresql_port keydb_port];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   system.stateVersion = "24.11";
