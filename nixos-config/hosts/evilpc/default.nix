@@ -11,6 +11,7 @@
 
   environment = {
     systemPackages = [
+      pkgs.anki-bin
       pkgs.amdgpu_top
       pkgs.gimp
       pkgs.headsetcontrol
