@@ -218,6 +218,11 @@
     };
 
     direnv.enable = true;
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 7d --keep 3";
+    };
   };
 
   xdg.portal = {
@@ -228,12 +233,6 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
-    };
-
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
     };
   };
 }
