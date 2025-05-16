@@ -23,9 +23,11 @@ in {
     systemPackages = [
       pkgs.brightnessctl
       pkgs.beekeeper-studio
+      pkgs.heaptrack
       pkgs.jq
       pkgs.keydb
       pkgs.tcpdump
+      pkgs.tokio-console
       pkgs.vesktop
       pkgs.wireshark
     ];
@@ -82,6 +84,7 @@ in {
     '';
   };
 
+  networking.firewall.checkReversePath = false;
   networking.firewall.allowedTCPPorts = [postgresql_port keydb_port];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
