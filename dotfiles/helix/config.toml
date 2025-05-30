@@ -4,7 +4,7 @@ theme = "everforest_light"
 line-number = "relative"
 cursorline = true
 bufferline = "multiple"
-shell = [ "zsh", "-c" ]
+shell = [ "fish", "-c" ]
 auto-save = true
 
 [editor.cursor-shape]

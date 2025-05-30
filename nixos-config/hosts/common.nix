@@ -95,9 +95,12 @@
       pkgs.xdg-user-dirs
       pkgs.xdg-utils
       pkgs.zoxide
+
+      pkgs.fishPlugins.z
+      pkgs.fishPlugins.puffer
     ];
 
-    shells = [pkgs.zsh];
+    shells = [pkgs.fish];
     sessionVariables.NIXOS_OZONE_WL = "1";
 
     variables = {
@@ -116,7 +119,7 @@
   };
 
   users = {
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.fish;
   };
 
   nixpkgs = {
@@ -145,6 +148,7 @@
   };
 
   programs = {
+    command-not-found.enable = false;
     file-roller.enable = true;
     git.enable = true;
 
@@ -180,40 +184,10 @@
 
     waybar.enable = true;
 
-    zsh = {
+    fish = {
       enable = true;
-      histSize = 10000;
-      autosuggestions.enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-
-      setOptions = [
-        "SHARE_HISTORY"
-        "HIST_FCNTL_LOCK"
-        "HIST_IGNORE_SPACE"
-        "HIST_IGNORE_DUPS"
-        "HIST_IGNORE_ALL_DUPS"
-        "HIST_FIND_NO_DUPS"
-        "HIST_SAVE_NO_DUPS"
-      ];
-
-      ohMyZsh = {
-        enable = true;
-        plugins = [
-          "direnv"
-          "fancy-ctrl-z"
-          "fzf"
-          "git"
-          "man"
-          "zoxide"
-        ];
-      };
-
-      shellInit = ''
-        FZF_DEFAULT_OPTS="--color=light"
-
-        bindkey '^p' history-search-backward
-        bindkey '^n' history-search-forward
+      interactiveShellInit = ''
+        set fish_greeting
       '';
     };
 
