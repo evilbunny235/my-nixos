@@ -8,8 +8,6 @@ in {
     ../../packages/scripts/screenshot.nix
   ];
 
-  boot.initrd.luks.devices."luks-d0fc23c8-a568-43cf-81af-22c2e84ebde4".device = "/dev/disk/by-uuid/d0fc23c8-a568-43cf-81af-22c2e84ebde4";
-
   networking.hostName = "bog-laptop";
 
   hardware = {
