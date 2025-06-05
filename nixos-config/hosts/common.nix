@@ -94,7 +94,6 @@
       pkgs.wttrbar
       pkgs.xdg-user-dirs
       pkgs.xdg-utils
-      pkgs.zoxide
 
       pkgs.fishPlugins.z
       pkgs.fishPlugins.puffer
