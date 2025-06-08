@@ -11,7 +11,15 @@
   boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci"];
   boot.initrd.kernelModules = ["yt6801"];
   boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [config.boot.kernelPackages.yt6801];
+  boot.extraModulePackages = [
+    (config.boot.kernelPackages.yt6801.overrideAttrs (
+      _: {
+        patches = [
+          ./kernel_6.15_fix.patch
+        ];
+      }
+    ))
+  ];
   boot.kernelParams = [
     "intel_iommu=on"
   ];
