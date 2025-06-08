@@ -74,7 +74,7 @@
       pkgs.hyprpaper
       pkgs.kdiff3
       pkgs.meld
-      pkgs.nil
+      pkgs.nixd
       pkgs.nwg-look
       pkgs.pavucontrol
       pkgs.pinta
