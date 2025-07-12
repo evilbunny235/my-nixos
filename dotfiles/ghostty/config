@@ -9,4 +9,4 @@ resize-overlay = never
 keybind = ctrl+enter=ignore
 keybind = shift+up=scroll_page_lines:-1
 keybind = shift+down=scroll_page_lines:1
-scrollback-limit = 5000
+scrollback-limit = 50000000
