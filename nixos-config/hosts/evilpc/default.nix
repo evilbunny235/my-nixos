@@ -20,7 +20,6 @@
       pkgs.kdePackages.kdenlive
       pkgs.lutris
       pkgs.mangohud
-      pkgs.obs-studio
       pkgs.path-of-building
       pkgs.prismlauncher
       pkgs.qbittorrent
@@ -55,6 +54,10 @@
 
   programs = {
     steam.enable = true;
+    obs-studio = {
+      enable = true;
+      plugins = [ pkgs.obs-studio-plugins.obs-vaapi ];
+    };
   };
 
   services.mysql = {
