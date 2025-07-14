@@ -24,6 +24,7 @@ in {
       pkgs.heaptrack
       pkgs.jq
       pkgs.keydb
+      pkgs.libreoffice-fresh
       pkgs.tcpdump
       pkgs.tokio-console
       pkgs.vesktop
@@ -32,7 +33,7 @@ in {
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "beekeeper-studio-5.2.9"
+    "beekeeper-studio-5.2.12"
   ];
 
   programs = {
