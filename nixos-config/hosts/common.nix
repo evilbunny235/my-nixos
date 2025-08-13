@@ -47,7 +47,6 @@
 
     greetd = {
       enable = true;
-      vt = 2;
       settings.default_session.user = "greeter";
     };
 
@@ -65,6 +64,7 @@
       pkgs.btop
       pkgs.eza
       pkgs.diff-so-fancy
+      pkgs.difftastic
       pkgs.firefox
       pkgs.fuzzel
       pkgs.fzf
@@ -165,8 +165,7 @@
           nerdFontsVersion = 3;
         };
         git.paging = {
-          colorArg = "always";
-          pager = "diff-so-fancy";
+          externalDiffCommand = "difft --color=always";
         };
       };
     };
