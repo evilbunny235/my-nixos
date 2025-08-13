@@ -163,6 +163,10 @@
         gui = {
           scrollHeight = 10;
           nerdFontsVersion = 3;
+          sidePanelWidth = 0.2;
+          theme = {
+            selectedLineBgColor = ["gray"];
+          };
         };
         git.paging = {
           externalDiffCommand = "difft --color=always";
