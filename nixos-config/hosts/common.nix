@@ -63,7 +63,6 @@
       pkgs.bibata-cursors
       pkgs.btop
       pkgs.eza
-      pkgs.diff-so-fancy
       pkgs.difftastic
       pkgs.firefox
       pkgs.fuzzel
