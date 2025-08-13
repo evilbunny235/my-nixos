@@ -13,21 +13,7 @@
   boot.initrd.kernelModules = ["yt6801"];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [
-    (config.boot.kernelPackages.yt6801.overrideAttrs (
-      _: {
-        version = "1.0.30-20250430";
-
-        patches = [
-          ./kernel_6.15_fix.patch
-        ];
-
-        src = pkgs.fetchzip {
-          stripRoot = false;
-          url = "https://www.motor-comm.com/Public/Uploads/uploadfile/files/20250430/yt6801-linux-driver-1.0.30.zip";
-          sha256 = "sha256-6HeU3bbTaKOCy3X+nMpC9/bBc+0c4Ip5TdG+LGUGTKk=";
-        };
-      }
-    ))
+    config.boot.kernelPackages.yt6801
   ];
   boot.kernelParams = [
     "intel_iommu=on"

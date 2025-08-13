@@ -47,7 +47,7 @@ in {
   };
 
   services.greetd.settings.default_session.command = ''
-    ${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_bog-laptop.conf"
+    ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_bog-laptop.conf"
   '';
 
   virtualisation.docker.enable = false;

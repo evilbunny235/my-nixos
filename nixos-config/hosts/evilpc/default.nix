@@ -47,7 +47,7 @@
   };
 
   services.greetd.settings.default_session.command = ''
-    ${pkgs.greetd.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_evilpc.conf"
+    ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_evilpc.conf"
   '';
 
   # virtualisation.docker.enable = true;
@@ -56,7 +56,7 @@
     steam.enable = true;
     obs-studio = {
       enable = true;
-      plugins = [ pkgs.obs-studio-plugins.obs-vaapi ];
+      plugins = [pkgs.obs-studio-plugins.obs-vaapi];
     };
   };
 
