@@ -63,7 +63,7 @@
       pkgs.bibata-cursors
       pkgs.btop
       pkgs.eza
-      pkgs.difftastic
+      pkgs.diff-so-fancy
       pkgs.firefox
       pkgs.fuzzel
       pkgs.fzf
@@ -168,7 +168,8 @@
           };
         };
         git.paging = {
-          externalDiffCommand = "difft --color=always";
+          colorArg = "always";
+          pager = "diff-so-fancy";
         };
       };
     };
