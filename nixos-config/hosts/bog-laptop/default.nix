@@ -19,6 +19,7 @@ in {
 
   environment = {
     systemPackages = [
+      pkgs.awscli2
       pkgs.brightnessctl
       pkgs.beekeeper-studio
       pkgs.heaptrack
@@ -78,10 +79,17 @@ in {
       local  all      all     trust
 
       # ipv4
-      host   all      all     10.0.100.0/24   trust
+      host   all      all     all   trust
       # ipv6
       host   all      all     ::1/128         trust
     '';
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      AllowUsers = ["bogdan"];
+    };
   };
 
   networking.firewall.checkReversePath = false;
