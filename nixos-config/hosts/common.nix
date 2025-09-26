@@ -190,6 +190,15 @@
       enable = true;
       interactiveShellInit = ''
         set fish_greeting
+
+        function fish_user_key_bindings
+            bind \cz 'fg 2>/dev/null; commandline -f repaint'
+        end
+
+        function mkcd
+            mkdir -p $argv[1]
+            cd $argv[1]
+        end
       '';
     };
 
