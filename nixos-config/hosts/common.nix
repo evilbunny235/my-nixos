@@ -75,7 +75,7 @@
       pkgs.meld
       pkgs.nixd
       pkgs.nwg-look
-      pkgs.pavucontrol
+      pkgs.pwvucontrol
       pkgs.pinta
       pkgs.polkit_gnome
       pkgs.playerctl

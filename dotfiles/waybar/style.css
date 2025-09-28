@@ -55,7 +55,7 @@ tooltip {
 #window,
 #clock,
 #battery,
-#pulseaudio,
+#wireplumber,
 #network,
 #workspaces,
 #idle_inhibitor,
@@ -102,16 +102,9 @@ tooltip {
     border: 1px;
 }
 
-#pulseaudio,
+#wireplumber,
 #network {
     color: #f9e2af;
-}
-
-#pulseaudio.microphone {
-    color: #cba6f7;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px 10px 10px 0px;
 }
 
 #custom-weather {
