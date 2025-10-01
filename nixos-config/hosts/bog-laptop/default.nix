@@ -72,6 +72,7 @@ in {
 
   services.postgresql = {
     enable = true;
+    package = pkgs.postgresql_17;
     enableTCPIP = true;
     settings.port = postgresql_port;
     authentication = pkgs.lib.mkOverride 10 ''
