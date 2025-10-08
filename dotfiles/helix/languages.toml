@@ -1,7 +1,7 @@
 [[language]]
 name = "nix"
-file-types = ["nix"]
-indent = { unit = " ", tab-width = 2 }
+auto-format = true
+formatter = { command = "nix", args = ["fmt"] }
 
 [[language]]
 name = "cpp"
