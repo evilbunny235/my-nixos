@@ -4,7 +4,7 @@
     font-family: "Fira Code", monospace;
     font-weight: bold;
     font-size: 14px;
-    min-height: 0;
+    min-height: 19px;
 }
 
 window#waybar {
@@ -120,8 +120,4 @@ tooltip {
 #cpu,
 #temperature {
     color: #89b4fa;
-}
-
-#custom-gpu {
-    color: #76b900;
 }
