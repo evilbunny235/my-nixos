@@ -23,7 +23,6 @@ in {
       pkgs.brightnessctl
       pkgs.beekeeper-studio
       pkgs.heaptrack
-      pkgs.jq
       pkgs.keydb
       pkgs.libreoffice-fresh
       pkgs.tcpdump

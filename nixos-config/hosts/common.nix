@@ -71,6 +71,7 @@
       pkgs.gtrash
       pkgs.helix
       pkgs.hyprpaper
+      pkgs.jq
       pkgs.kdiff3
       pkgs.meld
       pkgs.nixd
