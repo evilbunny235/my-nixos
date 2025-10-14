@@ -1,5 +1,9 @@
-{pkgs, ...}: let
-  postgresql_port = 5432;
+{
+  self,
+  pkgs,
+  config,
+  ...
+}: let
   keydb_port = 6379;
 in {
   imports = [
@@ -20,8 +24,8 @@ in {
   environment = {
     systemPackages = [
       pkgs.awscli2
-      pkgs.brightnessctl
       pkgs.beekeeper-studio
+      pkgs.brightnessctl
       pkgs.heaptrack
       pkgs.keydb
       pkgs.libreoffice-fresh
@@ -73,7 +77,6 @@ in {
     enable = true;
     package = pkgs.postgresql_17;
     enableTCPIP = true;
-    settings.port = postgresql_port;
     authentication = pkgs.lib.mkOverride 10 ''
       # type database DBuser origin-address auth-method
       local  all      all     trust
@@ -93,7 +96,11 @@ in {
   };
 
   networking.firewall.checkReversePath = false;
-  networking.firewall.allowedTCPPorts = [postgresql_port keydb_port];
+  networking.firewall.allowedTCPPorts = [
+    config.services.postgresql.settings.port
+    config.services.jupyter.port
+    keydb_port
+  ];
 
   security.pki.certificateFiles = [../certificates/aws-global-bundle.pem];
 
