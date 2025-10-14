@@ -29,10 +29,16 @@ in {
       pkgs.heaptrack
       pkgs.keydb
       pkgs.libreoffice-fresh
+      pkgs.pgadmin4-desktopmode
       pkgs.tcpdump
       pkgs.tokio-console
       pkgs.vesktop
       pkgs.wireshark
+
+      pkgs.dive
+      pkgs.kubectl
+      pkgs.kubernetes-helm
+      pkgs.minikube
     ];
   };
 
@@ -54,7 +60,7 @@ in {
     ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_bog-laptop.conf"
   '';
 
-  virtualisation.docker.enable = false;
+  virtualisation.docker.enable = true;
 
   services.tlp = {
     enable = true;
