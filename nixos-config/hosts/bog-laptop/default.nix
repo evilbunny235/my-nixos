@@ -94,6 +94,9 @@ in {
 
   networking.firewall.checkReversePath = false;
   networking.firewall.allowedTCPPorts = [postgresql_port keydb_port];
+
+  security.pki.certificateFiles = [../certificates/aws-global-bundle.pem];
+
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   system.stateVersion = "24.11";
