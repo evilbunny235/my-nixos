@@ -54,8 +54,6 @@ in {
     ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_bog-laptop.conf"
   '';
 
-  virtualisation.docker.enable = true;
-
   services.tlp = {
     enable = true;
 
