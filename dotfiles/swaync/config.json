@@ -36,6 +36,7 @@
   },
   "widgets": [
     "dnd",
+    "buttons-grid",
     "title",
     "notifications"
   ],
@@ -47,6 +48,24 @@
     },
     "dnd": {
       "text": "Do Not Disturb"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "TV",
+          "type": "toggle",
+          "command": "toggle_tv $SWAYNC_TOGGLE_STATE",
+          "update-command": "is_tv_on"
+        },
+        {
+          "label": "",
+          "command": "loginctl lock-session"
+        },
+        {
+          "label":"",
+          "command": "shutdown now"
+        }
+      ]
     }
   }
 }

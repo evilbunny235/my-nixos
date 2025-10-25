@@ -2,8 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common.nix
-    ../../packages/scripts/screenshot.nix
-    ../../packages/scripts/tv.nix
+    ../../packages/hyprland-utils.nix
   ];
 
   hardware.xone.enable = true;
