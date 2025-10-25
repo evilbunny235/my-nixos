@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common.nix
-    ../../packages/hyprland-utils.nix
+    ../../scripts/hyprland-specific.nix
   ];
 
   hardware.xone.enable = true;
