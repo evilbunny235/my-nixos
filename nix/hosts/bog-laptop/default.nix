@@ -2,9 +2,7 @@
   pkgs,
   config,
   ...
-}: let
-  keydb_port = 6379;
-in {
+}: {
   imports = [
     ./hardware-configuration.nix
     ../common.nix
@@ -26,7 +24,6 @@ in {
       pkgs.beekeeper-studio
       pkgs.brightnessctl
       pkgs.heaptrack
-      pkgs.keydb
       pkgs.libreoffice-fresh
       pkgs.pgadmin4-desktopmode
       pkgs.tcpdump
@@ -37,7 +34,7 @@ in {
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "beekeeper-studio-5.2.12"
+    "beekeeper-studio-5.3.4"
   ];
 
   programs = {
@@ -97,7 +94,6 @@ in {
   networking.firewall.allowedTCPPorts = [
     config.services.postgresql.settings.port
     config.services.jupyter.port
-    keydb_port
   ];
 
   security.pki.certificateFiles = [../../../certificates/aws-global-bundle.pem];

@@ -171,6 +171,9 @@
           colorArg = "always";
           pager = "diff-so-fancy";
         };
+        keybinding.universal = {
+          suspendApp = "<disabled>";
+        };
       };
     };
 
