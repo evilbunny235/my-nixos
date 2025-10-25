@@ -50,6 +50,7 @@
       "text": "Do Not Disturb"
     },
     "buttons-grid": {
+      "buttons-per-row": 4,
       "actions": [
         {
           "label": "TV",
@@ -58,12 +59,16 @@
           "update-command": "is_tv_on"
         },
         {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
           "label": "",
           "command": "loginctl lock-session"
         },
         {
           "label":"",
-          "command": "shutdown now"
+          "command": "systemctl poweroff"
         }
       ]
     }
