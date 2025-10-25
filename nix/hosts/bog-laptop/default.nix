@@ -100,7 +100,7 @@ in {
     keydb_port
   ];
 
-  security.pki.certificateFiles = [../certificates/aws-global-bundle.pem];
+  security.pki.certificateFiles = [../../../certificates/aws-global-bundle.pem];
 
   system.stateVersion = "24.11";
 }
