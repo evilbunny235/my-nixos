@@ -22,37 +22,15 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     devShells.${system}.default = pkgs.mkShell {
+      nativeBuildInputs = [rust_toolchain];
+
       packages = [
-        rust_toolchain
         pkgs.lldb
         pkgs.rust-analyzer-unwrapped
       ];
 
       RUST_SRC_PATH = "${rust_toolchain}/lib/rustlib/src/rust/library";
       RUST_BACKTRACE = "1";
-    };
-
-    packages.${system} = rec {
-      # FIXME fix all AAAA
-      AAAA = let
-        projectPath = ./AAAA;
-        manifest = (pkgs.lib.importTOML (projectPath + /Cargo.toml)).package;
-      in
-        pkgs.rustPlatform.buildRustPackage {
-          pname = manifest.name;
-          version = manifest.version;
-          src = ./AAAA;
-          # sourceRoot = "./AAAA";
-          cargoLock.lockFile = projectPath + /Cargo.lock;
-        };
-
-      docker_img_sender = pkgs.dockerTools.buildLayeredImage {
-        name = AAAA.pname;
-        tag = AAAA.version;
-        config = {
-          Cmd = ["${AAAA}/bin/AAAA"];
-        };
-      };
     };
   };
 }

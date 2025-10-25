@@ -14,14 +14,12 @@
 
     project_name = "test";
 
-    # build time deps
     nativeBuildInputs = [
       pkgs.clang-tools
       pkgs.clang
       pkgs.cmake
     ];
 
-    # runtime deps
     buildInputs = [];
   in {
     formatter.x86_64-linux = pkgs.alejandra;
