@@ -6,7 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common.nix
-    ../../packages/scripts/screenshot.nix
+    ../../scripts/hyprland-specific.nix
   ];
 
   networking.hostName = "bog-laptop";
