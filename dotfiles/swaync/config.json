@@ -65,10 +65,6 @@
         {
           "label": "",
           "command": "loginctl lock-session"
-        },
-        {
-          "label":"",
-          "command": "systemctl poweroff"
         }
       ]
     }
