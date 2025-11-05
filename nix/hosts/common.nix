@@ -109,8 +109,7 @@
     };
 
     shellAliases = {
-      ip = "ip --color";
-      ls = "eza --icons";
+      ls = "eza --icons --group-directories-first";
       tp = "gtrash put";
       trash_empty = "gtrash prune --day 7";
     };
