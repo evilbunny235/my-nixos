@@ -148,6 +148,7 @@
     command-not-found.enable = false;
     file-roller.enable = true;
     git.enable = true;
+    localsend.enable = true;
 
     hyprland = {
       enable = true;
