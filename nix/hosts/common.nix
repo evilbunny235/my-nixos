@@ -62,8 +62,9 @@
       pkgs.bemoji
       pkgs.bibata-cursors
       pkgs.btop
-      pkgs.eza
       pkgs.diff-so-fancy
+      pkgs.eza
+      pkgs.file-roller
       pkgs.firefox
       pkgs.fuzzel
       pkgs.fzf
@@ -76,10 +77,10 @@
       pkgs.meld
       pkgs.nixd
       pkgs.nwg-look
-      pkgs.pwvucontrol
       pkgs.pinta
-      pkgs.polkit_gnome
       pkgs.playerctl
+      pkgs.polkit_gnome
+      pkgs.pwvucontrol
       pkgs.ripgrep
       pkgs.sd
       pkgs.swaylock-effects
@@ -89,8 +90,8 @@
       pkgs.unrar
       pkgs.unzip
       pkgs.vlc
-      pkgs.wlogout
       pkgs.wl-clipboard
+      pkgs.wlogout
       pkgs.wttrbar
       pkgs.xdg-user-dirs
       pkgs.xdg-utils
@@ -140,13 +141,12 @@
       pkgs.meslo-lgs-nf
       pkgs.noto-fonts
       pkgs.noto-fonts-cjk-sans
-      pkgs.noto-fonts-emoji
+      pkgs.noto-fonts-color-emoji
     ];
   };
 
   programs = {
     command-not-found.enable = false;
-    file-roller.enable = true;
     git.enable = true;
     localsend.enable = true;
 
@@ -167,10 +167,13 @@
             selectedLineBgColor = ["gray"];
           };
         };
-        git.paging = {
-          colorArg = "always";
-          pager = "diff-so-fancy";
-        };
+        git.pagers = [
+          {
+            colorArg = "always";
+            pager = "diff-so-fancy";
+          }
+        ];
+
         keybinding.universal = {
           suspendApp = "<disabled>";
         };
