@@ -19,7 +19,7 @@
       pkgs.kdePackages.kdenlive
       pkgs.lutris
       pkgs.mangohud
-      pkgs.path-of-building
+      pkgs.rusty-path-of-building
       pkgs.prismlauncher
       pkgs.qbittorrent
       pkgs.deluge
