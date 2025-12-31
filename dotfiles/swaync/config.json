@@ -59,12 +59,14 @@
           "update-command": "is_tv_on"
         },
         {
-          "label": "󰂯",
-          "command": "blueman-manager"
+          "label": "HDR",
+          "type": "toggle",
+          "command": "toggle_hdr $SWAYNC_TOGGLE_STATE",
+          "update-command": "is_hdr_on"
         },
         {
-          "label": "",
-          "command": "loginctl lock-session"
+          "label": "󰂯",
+          "command": "blueman-manager"
         }
       ]
     }
