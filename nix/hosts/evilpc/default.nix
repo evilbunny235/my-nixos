@@ -93,13 +93,30 @@
     ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_evilpc.conf"
   '';
 
-  # virtualisation.docker.enable = true;
-
   programs = {
     steam.enable = true;
     obs-studio = {
       enable = true;
       plugins = [pkgs.obs-studio-plugins.obs-vaapi];
+    };
+
+    dms-shell = {
+      enable = true;
+      enableClipboard = true;
+      enableDynamicTheming = true;
+      enableSystemMonitoring = true;
+
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+    };
+  };
+
+  systemd.user.targets = {
+    "hyprland-session" = {
+      bindsTo = ["graphical-session.target"];
+      after = ["graphical-session.target"];
     };
   };
 

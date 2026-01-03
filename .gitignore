@@ -2,3 +2,6 @@ dotfiles/btop/btop.log
 dotfiles/hypr/machine_specific.conf
 dotfiles/hypr/hyprpaper.conf
 result
+dotfiles/ghostty/config-dankcolors
+dotfiles/DankMaterialShell/firefox.css
+dotfiles/DankMaterialShell/plugin_settings.json

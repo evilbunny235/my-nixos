@@ -1,0 +1,11 @@
+{
+  "id": "tv_toggler",
+  "name": "Tv Toggler",
+  "description": "Enables/Disables my TV",
+  "version": "1.0.0",
+  "author": "EvilBunny",
+  "icon": "widgets",
+  "type": "widget",
+  "component": "./tv_toggler.qml",
+  "permissions": ["settings_read", "settings_write", "process"]
+}

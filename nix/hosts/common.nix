@@ -55,8 +55,6 @@
     hypridle.enable = true;
   };
 
-  security.pam.services.swaylock.text = "auth include login";
-
   environment = {
     systemPackages = [
       pkgs.bemoji
@@ -71,7 +69,6 @@
       pkgs.ghostty
       pkgs.gtrash
       pkgs.helix
-      pkgs.hyprpaper
       pkgs.jq
       pkgs.kdiff3
       pkgs.meld
@@ -83,16 +80,12 @@
       pkgs.pwvucontrol
       pkgs.ripgrep
       pkgs.sd
-      pkgs.swaylock-effects
-      pkgs.swaynotificationcenter
       pkgs.tealdeer
       pkgs.udiskie
       pkgs.unrar
       pkgs.unzip
       pkgs.vlc
       pkgs.wl-clipboard
-      pkgs.wlogout
-      pkgs.wttrbar
       pkgs.xdg-user-dirs
       pkgs.xdg-utils
 
@@ -189,8 +182,6 @@
         pkgs.xfce.tumbler
       ];
     };
-
-    waybar.enable = true;
 
     fish = {
       enable = true;

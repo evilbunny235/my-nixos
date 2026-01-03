@@ -1,0 +1,11 @@
+{
+  "id": "hdr_toggler",
+  "name": "HDR Toggler",
+  "description": "Enables/Disables HDR on the main monitor",
+  "version": "1.0.0",
+  "author": "EvilBunny",
+  "icon": "widgets",
+  "type": "widget",
+  "component": "./hdr_toggler.qml",
+  "permissions": ["settings_read", "settings_write", "process"]
+}

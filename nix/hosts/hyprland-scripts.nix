@@ -35,14 +35,6 @@
     '';
   };
 
-  is_tv_on = pkgs.writeShellApplication {
-    name = "is_tv_on";
-    runtimeInputs = [pkgs.jq];
-    text = ''
-      hyprctl -j monitors | jq -r 'any(.[]; .name == "HDMI-A-1")'
-    '';
-  };
-
   toggle_hdr = pkgs.writeShellApplication {
     name = "toggle_hdr";
     runtimeInputs = [pkgs.jq];
@@ -54,14 +46,6 @@
       fi
     '';
   };
-
-  is_hdr_on = pkgs.writeShellApplication {
-    name = "is_hdr_on";
-    runtimeInputs = [pkgs.jq];
-    text = ''
-      hyprctl -j monitors | jq -r '.[] | select (.model == "MAG274QRF-QD") | .colorManagementPreset == "hdr"'
-    '';
-  };
 in {
   environment.systemPackages = [
     screenshot_area
@@ -69,9 +53,6 @@ in {
     screenshot_focused_monitor
 
     toggle_tv
-    is_tv_on
-
     toggle_hdr
-    is_hdr_on
   ];
 }
