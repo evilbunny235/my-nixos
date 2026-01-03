@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common.nix
-    ../../scripts/hyprland-specific.nix
+    ../hyprland-scripts.nix
   ];
 
   nixpkgs.overlays = [
