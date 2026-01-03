@@ -73,11 +73,6 @@
       pkgs.jellyfin
       pkgs.jellyfin-web
       pkgs.jellyfin-ffmpeg
-
-      pkgs.kubectl
-      pkgs.kubernetes-helm
-      pkgs.minikube
-      pkgs.dive
     ];
   };
 
