@@ -85,7 +85,7 @@
   };
 
   services.greetd.settings.default_session.command = ''
-    ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_evilpc.conf"
+    ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland"
   '';
 
   programs = {
@@ -105,13 +105,6 @@
         enable = true;
         restartIfChanged = true;
       };
-    };
-  };
-
-  systemd.user.targets = {
-    "hyprland-session" = {
-      bindsTo = ["graphical-session.target"];
-      after = ["graphical-session.target"];
     };
   };
 
