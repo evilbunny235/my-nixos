@@ -10,3 +10,8 @@ auto-format = true
 [[language]]
 name = "c"
 auto-format = true
+
+[[language]]
+name = "python"
+formatter = { command = "ruff", args = ["format", "-"] }
+auto-format = true
