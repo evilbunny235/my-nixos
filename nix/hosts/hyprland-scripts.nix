@@ -40,7 +40,7 @@
     runtimeInputs = [pkgs.jq];
     text = ''
       if [ "$1" == "true" ]; then
-        hyprctl keyword monitor DP-1, 2560x1440@120, 0x0,1, vrr, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.1
+        hyprctl keyword monitor DP-1, 2560x1440@120, 0x0,1, vrr, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.1, sdrsaturation, 1.2
       else
         hyprctl keyword monitor DP-1, 2560x1440@120, 0x0,1, vrr, 1
       fi
