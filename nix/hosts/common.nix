@@ -47,7 +47,10 @@
 
     greetd = {
       enable = true;
-      settings.default_session.user = "greeter";
+      settings.default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd Hyprland";
+        user = "greeter";
+      };
     };
 
     blueman.enable = true;
@@ -204,6 +207,14 @@
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 7d";
+    };
+
+    dms-shell = {
+      enable = true;
+      systemd = {
+        enable = false;
+        restartIfChanged = false;
+      };
     };
   };
 

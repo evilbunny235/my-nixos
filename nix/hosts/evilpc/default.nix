@@ -84,27 +84,11 @@
     extraGroups = ["wheel" "networkmanager" "video" "docker"];
   };
 
-  services.greetd.settings.default_session.command = ''
-    ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland"
-  '';
-
   programs = {
     steam.enable = true;
     obs-studio = {
       enable = true;
       plugins = [pkgs.obs-studio-plugins.obs-vaapi];
-    };
-
-    dms-shell = {
-      enable = true;
-      enableClipboard = true;
-      enableDynamicTheming = true;
-      enableSystemMonitoring = true;
-
-      systemd = {
-        enable = true;
-        restartIfChanged = true;
-      };
     };
   };
 

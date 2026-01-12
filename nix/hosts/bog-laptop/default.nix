@@ -37,30 +37,12 @@
     "beekeeper-studio-5.3.4"
   ];
 
-  programs = {
-    wireshark.enable = true;
-  };
+  programs.wireshark.enable = true;
 
   users.users.bogdan = {
     isNormalUser = true;
     home = "/home/bogdan";
     extraGroups = ["wheel" "networkmanager" "video" "docker" "wireshark"];
-  };
-
-  services.greetd.settings.default_session.command = ''
-    ${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd "Hyprland -c ~/.config/hypr/hyprland_bog-laptop.conf"
-  '';
-
-  services.tlp = {
-    enable = true;
-
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-    };
   };
 
   services.postgresql = {
