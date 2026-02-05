@@ -1,7 +1,7 @@
 [[language]]
 name = "nix"
 auto-format = true
-formatter = { command = "nix", args = ["fmt"] }
+formatter = { command = "nixfmt" }
 
 [[language]]
 name = "cpp"

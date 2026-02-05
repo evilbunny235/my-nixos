@@ -76,6 +76,8 @@
       pkgs.kdiff3
       pkgs.meld
       pkgs.nixd
+      pkgs.nixfmt
+      pkgs.nixfmt-tree
       pkgs.nwg-look
       pkgs.pinta
       pkgs.playerctl
