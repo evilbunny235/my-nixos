@@ -49,6 +49,15 @@
     enable = true;
     package = pkgs.postgresql_17;
     enableTCPIP = true;
+    extensions = ps: [
+      ps.pg_cron
+    ];
+
+    settings = {
+      shared_preload_libraries = "pg_cron";
+      "cron.database_name" = "postgres";
+    };
+    
     authentication = pkgs.lib.mkOverride 10 ''
       # type database DBuser origin-address auth-method
       local  all      all     trust
