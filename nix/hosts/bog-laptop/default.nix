@@ -34,7 +34,7 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "beekeeper-studio-5.3.4"
+    "beekeeper-studio-5.5.7"
   ];
 
   programs.wireshark.enable = true;
@@ -42,7 +42,13 @@
   users.users.bogdan = {
     isNormalUser = true;
     home = "/home/bogdan";
-    extraGroups = ["wheel" "networkmanager" "video" "docker" "wireshark"];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "docker"
+      "wireshark"
+    ];
   };
 
   services.postgresql = {
@@ -57,7 +63,7 @@
       shared_preload_libraries = "pg_cron";
       "cron.database_name" = "postgres";
     };
-    
+
     authentication = pkgs.lib.mkOverride 10 ''
       # type database DBuser origin-address auth-method
       local  all      all     trust

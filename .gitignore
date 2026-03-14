@@ -7,3 +7,7 @@ dotfiles/DankMaterialShell/firefox.css
 dotfiles/DankMaterialShell/plugin_settings.json
 dotfiles/hypr/hyprland.conf
 dotfiles/hypr/hypridle.conf
+dotfiles/hypr/dms
+/dotfiles/DankMaterialShell/.firstlaunch
+/dotfiles/ghostty/themes/dankcolors
+/dotfiles/DankMaterialShell/.changelog-1.4

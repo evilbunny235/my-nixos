@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_18;
 
     loader = {
       systemd-boot = {
@@ -48,7 +49,7 @@
     greetd = {
       enable = true;
       settings.default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time -r --user-menu --cmd start-hyprland";
         user = "greeter";
       };
     };
@@ -98,7 +99,7 @@
       pkgs.fishPlugins.puffer
     ];
 
-    shells = [pkgs.fish];
+    shells = [ pkgs.fish ];
     sessionVariables.NIXOS_OZONE_WL = "1";
 
     variables = {
@@ -126,10 +127,23 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = ["Noto Serif" "Noto Color Emoji"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        monospace = ["Fira Code" "MesloLGS NF" "Noto Color Emoji"];
-        emoji = ["Noto Sans" "Noto Color Emoji"];
+        serif = [
+          "Noto Serif"
+          "Noto Color Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans"
+          "Noto Color Emoji"
+        ];
+        monospace = [
+          "Fira Code"
+          "MesloLGS NF"
+          "Noto Color Emoji"
+        ];
+        emoji = [
+          "Noto Sans"
+          "Noto Color Emoji"
+        ];
       };
     };
 
@@ -162,7 +176,7 @@
           nerdFontsVersion = 3;
           sidePanelWidth = 0.2;
           theme = {
-            selectedLineBgColor = ["gray"];
+            selectedLineBgColor = [ "gray" ];
           };
         };
         git.pagers = [
@@ -183,8 +197,8 @@
     thunar = {
       enable = true;
       plugins = [
-        pkgs.xfce.thunar-archive-plugin
-        pkgs.xfce.tumbler
+        pkgs.thunar-archive-plugin
+        pkgs.tumbler
       ];
     };
 
@@ -226,7 +240,10 @@
 
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };

@@ -122,8 +122,6 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
-  "weatherLocation": "Amsterdam, Noord-Holland",
-  "weatherCoordinates": "52.3730796,4.8924534",
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
@@ -294,5 +292,6 @@
       "maximizeDetection": true
     }
   ],
-  "configVersion": 2
+  "configVersion": 5,
+  "desktopWidgetInstances": []
 }
