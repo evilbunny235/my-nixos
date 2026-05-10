@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ../common.nix
@@ -31,7 +32,7 @@
     ];
   };
 
-  services.udev.packages = [pkgs.headsetcontrol];
+  services.udev.packages = [ pkgs.headsetcontrol ];
 
   users.users.evilbunny = {
     isNormalUser = true;
@@ -45,10 +46,14 @@
   };
 
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
+
     obs-studio = {
       enable = true;
-      plugins = [pkgs.obs-studio-plugins.obs-vaapi];
+      plugins = [ pkgs.obs-studio-plugins.obs-vaapi ];
     };
   };
 
@@ -57,7 +62,7 @@
     package = pkgs.mysql84;
   };
 
-  systemd.services.mysql.wantedBy = pkgs.lib.mkForce [];
+  systemd.services.mysql.wantedBy = pkgs.lib.mkForce [ ];
 
   services.jellyfin = {
     enable = true;
