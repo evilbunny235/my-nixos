@@ -17,14 +17,14 @@
       pkgs.headsetcontrol
       pkgs.qpwgraph
       pkgs.kdePackages.kdenlive
-      pkgs.lutris
+      # pkgs.lutris
       pkgs.mangohud
       pkgs.rusty-path-of-building
       pkgs.prismlauncher
       pkgs.qbittorrent
       pkgs.deluge
       pkgs.vesktop
-      pkgs.wine64
+      pkgs.wineWow64Packages.waylandFull
 
       pkgs.jellyfin
       pkgs.jellyfin-web
