@@ -25,7 +25,7 @@
       buildInputs = [ ];
     in
     {
-      formatter.x86_64-linux = pkgs.alejandra;
+      formatter.x86_64-linux = pkgs.nixfmt;
 
       devShells.${system}.default =
         pkgs.mkShell.override

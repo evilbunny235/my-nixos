@@ -22,7 +22,7 @@
       rust_toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
     in
     {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
       devShells.${system}.default = pkgs.mkShell {
         nativeBuildInputs = [ rust_toolchain ];
