@@ -15,12 +15,12 @@ hl.env("XKB_DEFAULT_OPTIONS", "caps:escape,altwin:menu_win")
 hl.env("EGL_PLATFORM", "wayland")
 
 hl.on("hyprland.start", function()
-	hl.exec_raw("hyprctl setcursor Bibata-Modern-Classic 24")
-	hl.exec_raw("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_raw("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_raw("dms run")
-	hl.exec_raw("wl-paste --watch cliphist store")
-	hl.exec_raw("udiskie")
+	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("dms run")
+	hl.exec_cmd("wl-paste --watch cliphist store")
+	hl.exec_cmd("udiskie")
 end)
 
 hl.config({
@@ -229,3 +229,5 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { locked = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true })
+
+hl.bind("SUPER + CTRL + SHIFT + backspace", hl.dsp.exit())
