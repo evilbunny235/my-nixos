@@ -12,6 +12,9 @@ hl.monitor({
 	position = "0x0",
 	scale = 1,
 	vrr = 1,
+	bitdepth = 8,
+	sdrbrightness = 1.1,
+	sdrsaturation = 1.2
 })
 
 hl.monitor({
@@ -24,6 +27,9 @@ hl.monitor({
 hl.monitor({
 	output = "HDMI-A-1",
 	disabled = true,
+	mode = "3840x2160@60.00",
+	position = "5120x0",
+	scale = 1
 })
 
 hl.workspace_rule({

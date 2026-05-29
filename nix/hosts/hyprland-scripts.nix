@@ -44,9 +44,9 @@ let
     runtimeInputs = [ pkgs.jq ];
     text = ''
       if [ "$1" == "true" ]; then
-        hyprctl keyword monitor HDMI-A-1, 3840x2160@60.00, 5120x0, 1
+        hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = false })'
       else
-        hyprctl keyword monitor HDMI-A-1, disabled
+        hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = true })'
       fi
     '';
   };
@@ -56,9 +56,9 @@ let
     runtimeInputs = [ pkgs.jq ];
     text = ''
       if [ "$1" == "true" ]; then
-        hyprctl keyword monitor DP-1, 2560x1440@120, 0x0,1, vrr, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.1, sdrsaturation, 1.2
+        hyprctl eval 'hl.monitor({ output = "DP-1", bitdepth = 10, cm = "hdr" })'
       else
-        hyprctl keyword monitor DP-1, 2560x1440@120, 0x0,1, vrr, 1
+        hyprctl eval 'hl.monitor({ output = "DP-1", bitdepth = 8, cm = "srgb" })'
       fi
     '';
   };
