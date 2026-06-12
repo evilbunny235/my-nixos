@@ -29,7 +29,6 @@
       pkgs.pgadmin4-desktopmode
       pkgs.tcpdump
       pkgs.tokio-console
-      pkgs.vesktop
       pkgs.wireshark
     ];
   };

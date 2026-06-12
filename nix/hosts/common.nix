@@ -65,6 +65,7 @@
       pkgs.bibata-cursors
       pkgs.btop
       pkgs.diff-so-fancy
+      pkgs.discord
       pkgs.eza
       pkgs.file-roller
       pkgs.firefox
