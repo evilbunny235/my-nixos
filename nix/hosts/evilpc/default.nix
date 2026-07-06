@@ -13,6 +13,7 @@
     systemPackages = [
       pkgs.anki-bin
       pkgs.amdgpu_top
+      pkgs.geeqie
       pkgs.gimp
       pkgs.headsetcontrol
       pkgs.qpwgraph
