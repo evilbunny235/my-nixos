@@ -42,6 +42,7 @@
       "networkmanager"
       "video"
       "docker"
+      "gamemode"
     ];
   };
 
@@ -50,6 +51,8 @@
       enable = true;
       extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
+
+    gamemode.enable = true;
 
     obs-studio = {
       enable = true;
