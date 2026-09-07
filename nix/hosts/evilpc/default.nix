@@ -87,8 +87,8 @@
   #   };
   # };
 
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8211 ];
+  networking.firewall.allowedUDPPorts = [ 8211 ];
 
   system.stateVersion = "23.05";
 }
