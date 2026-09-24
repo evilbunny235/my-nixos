@@ -75,6 +75,20 @@
     user = "evilbunny";
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = [
+        pkgs.fcitx5-mozc
+        pkgs.fcitx5-gtk
+        pkgs.qt6Packages.fcitx5-chinese-addons
+      ];
+    };
+  };
+
   # services.printing = {
   #   enable = true;
   #   drivers = [pkgs.cnijfilter2];
