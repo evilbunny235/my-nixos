@@ -58,6 +58,8 @@
       enable = true;
       plugins = [ pkgs.obs-studio-plugins.obs-vaapi ];
     };
+
+    solaar.enable = true;
   };
 
   services.mysql = {
