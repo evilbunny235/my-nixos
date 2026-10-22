@@ -235,6 +235,30 @@
     };
   };
 
+  systemd.user.services.hyprland-session = {
+    description = "Hyprland session";
+
+    before = [ "xdg-desktop-autostart.target" ];
+    after = [ "graphical-session-pre.target" ];
+
+    wants = [
+      "graphical-session-pre.target"
+      "xdg-desktop-autostart.target"
+    ];
+
+    bindsTo = [ "graphical-session.target" ];
+
+    unitConfig = {
+      PropagatesStopTo = [ "graphical-session.target" ];
+    };
+
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.coreutils}/bin/true";
+    };
+  };
+
   xdg.portal = {
     enable = true;
   };

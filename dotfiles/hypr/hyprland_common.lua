@@ -18,10 +18,14 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("systemctl --user start hyprland-session")
 	hl.exec_cmd("dms run")
 	hl.exec_cmd("wl-paste --watch cliphist store")
 	hl.exec_cmd("udiskie")
-	hl.exec_cmd("fcitx5 -d")
+end)
+
+hl.on("hyprland.shutdown", function()
+    os.execute("systemctl --user stop graphical-session.target")
 end)
 
 hl.config({
