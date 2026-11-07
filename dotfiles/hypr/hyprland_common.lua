@@ -178,6 +178,12 @@ hl.window_rule({
 	center = true,
 })
 
+hl.window_rule({
+	match = { class = "^steam_app_4096930985$" },
+	float = true,
+	center = true,
+})
+
 hl.bind("SUPER + J", hl.dsp.window.close())
 hl.bind("SUPER + K", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + H", hl.dsp.layout("togglesplit"))
